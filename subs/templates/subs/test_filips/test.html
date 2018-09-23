@@ -1,0 +1,20 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
+    <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
+    <title>Тест Филлипса</title>
+</head>
+
+<body>
+<h1 id="title_filips">Тест школьной тревожности Филлипса</h1>
+    <div id="test_filips">
+        <h1  id="filip_number_test">Вопрос 1/58</h1>
+        <h2 id="filip_text_test">Трудно ли тебе держаться на одном уровне со всем классом, быть как все?</h2>
+        <div id="button_filips_div">
+            <input id="button_test_filips_yes" type="button" value="Да" onclick=on_yes_button()>
+            <input id="button_test_filips_no" type="button" value="Нет" onclick=on_no_button()>
+        </div>
+    </div>
+</body>
+</html>

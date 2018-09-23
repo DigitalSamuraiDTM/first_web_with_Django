@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
+        <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
+    </head>
+
+    <body>
+
+            <p id="nice">Это теcт Филлипса.</p>
+        </div>
+        <form>
+            <input type="button" value="+1" onclick=plus_one()>
+        </form>
+        <h1 id="par"></h1>
+        <form>
+            <input type="button" value="Далее" onclick=to_start_filips()>
+        </form>
+        <p id="rez" onload=on_load_main()>0</p>
+        <p id="het">.</p>
+        <form id="button_to_start">
+            <input type="button" value="Начать!" onclick=to_start_filips()>
+        </form>
+    </body>
+</html>

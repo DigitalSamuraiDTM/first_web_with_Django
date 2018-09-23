@@ -1,0 +1,29 @@
+{% load static %}
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" />
+        <script type="text/javascript" src="{% static 'subs/scripts.js' %}"></script>
+        <title>Это первый вопрос</title>
+    </head>
+    <body>
+
+
+            <p id="start_test_text">
+                Ребята, сейчас вам будет предложен опросник, который состоит из вопросов о том, как вы чувствуете себя в школе.
+                Старайтесь отвечать искренне и правдиво, Здесь нет правильных или неправильных, хороших или плохих ответов.
+                Но листе для ответов сверху напишите свое имя, фамилию и класс.
+                Отвечая на вопрос, записывайте его номер и ответ «+», если вы согласны и ним, и «-«, если не согласны
+            </p>
+
+    <form id="start_test_text">
+        <input type="button" value="Начать тестирование" onclick=to_test_filips()>
+    </form>
+
+    </body>
+
+
+
+</html>
