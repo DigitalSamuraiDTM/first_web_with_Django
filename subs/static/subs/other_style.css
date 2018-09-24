@@ -1,9 +1,4 @@
-#a{
-    position: absolute;
-    color: aqua;
-    top: 200px;
-    left: 100px;
-}
+
 #nice{
     color:darkcyan;
     position: absolute;
@@ -26,11 +21,7 @@
     top: 400px;
     left: 45%;
 }
-#start_test_text{
-    position: center;
-    margin: auto;
 
-}
 #test_filips{
     width: 940px;
     height: 215px;
@@ -43,14 +34,15 @@
 #button_test_filips_yes{
     position: relative;
     left: 100px;
-    height: 45px;
+    height: 55px;
     width: 150px;
     border: 1px solid burlywood;
     background: wheat;
     border-radius: 15px;
     outline: none;
     -webkit-transition: 0.1s;
-    font-size: 15px;
+    font-size: 17px;
+
     font-family: "Verdana", sans-serif;
 }
 #button_test_filips_yes:hover{
@@ -59,15 +51,16 @@
 #button_test_filips_no{
     position: relative;
     left: 540px;
-    height: 45px;
+    height: 55px;
     width: 150px;
     background: wheat;
     outline: none;
     border: 1px solid burlywood;
     border-radius: 15px;
     -webkit-transition: 0.1s;
-    font-size: 15px;
+    font-size: 17px;
     font-family: "Verdana", sans-serif;
+
 }
 #button_test_filips_no:hover{
     background: burlywood;
@@ -95,4 +88,39 @@
     text-align: center;
     font-family: "Verdana", sans-serif;
     font-size: 31px;
+}
+#title_filips2{
+    text-align: center;
+    font-family: "Verdana", sans-serif;
+    font-size: 31px;
+}
+#block_start_text{
+    width: 940px;
+    height: 215px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 170px;
+    padding: 10px;
+    border: outset wheat;
+}
+#start_test_text{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Verdana", sans-serif;
+}
+#button_to_test_filips{
+    position: relative;
+    left: 350px;
+    height: 60px;
+    width: 200px;
+    border: 1px solid burlywood;
+    background: wheat;
+    border-radius: 15px;
+    outline: none;
+    -webkit-transition: 0.1s;
+    font-size: 17px;
+    font-family: "Verdana", sans-serif;
+}
+#button_to_test_filips:hover{
+    background: burlywood;
 }
