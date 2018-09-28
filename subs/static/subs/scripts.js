@@ -11,26 +11,26 @@ var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration
 //Test Filips
 function give_results_filips() {
     main_choice_quest = sessionStorage.getItem('main_choice_quest');
-    anxiety_in_school= sessionStorage.getItem('anxiety_in_school');
-    social_fear= sessionStorage.getItem('social_fear');
-    frustration= sessionStorage.getItem('frustration');
-    fear_self_expressions= sessionStorage.getItem('fear_self_expressions');
-    fear_situation_to_check= sessionStorage.getItem('fear_situation_to_check');
-    fear_not_waiting_social= sessionStorage.getItem('fear_not_waiting_social');
-    low_resistance_stress= sessionStorage.getItem('low_resistance_stress');
-    problems_and_fears_with_teachers= sessionStorage.getItem('problems_and_fears_with_teachers');
-    document.getElementById('main_result_filips').innerText='Основное прохождение: '+main_choice_quest;
-    document.getElementById('anxiety_in_school').innerText='Общая тревожность в школе: '+anxiety_in_school;
-    document.getElementById('social_fear').innerText='Переживание социального стресса: '+social_fear;
-    document.getElementById('frustration').innerText='Фрустрация потребности в достижении успеха: '+frustration;
-    document.getElementById('fear_self_expressions').innerText='Страх самовыражения: '+fear_self_expressions;
-    document.getElementById('fear_situation_to_check').innerText='Страх ситуации проверки знаний: ' +fear_situation_to_check;
-    document.getElementById('fear_not_waiting_social').innerText='Страх несоответствовать ожиданиям окружающих: '+fear_not_waiting_social;
-    document.getElementById('low_resistance_stress').innerText='Низкая физиологическая сопротивляемость стрессу: '+low_resistance_stress;
-    document.getElementById('problems_and_fears_with_teachers').innerText='Проблемы и страхи в отношениях с учителями: '+problems_and_fears_with_teachers;
+    anxiety_in_school = sessionStorage.getItem('anxiety_in_school');
+    social_fear = sessionStorage.getItem('social_fear');
+    frustration = sessionStorage.getItem('frustration');
+    fear_self_expressions = sessionStorage.getItem('fear_self_expressions');
+    fear_situation_to_check = sessionStorage.getItem('fear_situation_to_check');
+    fear_not_waiting_social = sessionStorage.getItem('fear_not_waiting_social');
+    low_resistance_stress = sessionStorage.getItem('low_resistance_stress');
+    problems_and_fears_with_teachers = sessionStorage.getItem('problems_and_fears_with_teachers');
+    document.getElementById('main_result_filips').innerText = 'Основное прохождение: ' + main_choice_quest;
+    document.getElementById('anxiety_in_school').innerText = 'Общая тревожность в школе: ' + anxiety_in_school;
+    document.getElementById('social_fear').innerText = 'Переживание социального стресса: ' + social_fear;
+    document.getElementById('frustration').innerText = 'Фрустрация потребности в достижении успеха: ' + frustration;
+    document.getElementById('fear_self_expressions').innerText = 'Страх самовыражения: ' + fear_self_expressions;
+    document.getElementById('fear_situation_to_check').innerText = 'Страх ситуации проверки знаний: ' + fear_situation_to_check;
+    document.getElementById('fear_not_waiting_social').innerText = 'Страх несоответствовать ожиданиям окружающих: ' + fear_not_waiting_social;
+    document.getElementById('low_resistance_stress').innerText = 'Низкая физиологическая сопротивляемость стрессу: ' + low_resistance_stress;
+    document.getElementById('problems_and_fears_with_teachers').innerText = 'Проблемы и страхи в отношениях с учителями: ' + problems_and_fears_with_teachers;
+}
 
     // Main
-
 
 
 
@@ -54,10 +54,12 @@ function back_to_main() {
 }
 
 
+function to_start_filips() {
+    location.href='/main/FilipsTest/start/'
 }
 
-function to_start_filips() {
-    location.href='/main/FilipsTest/start/';
+function to_magic_filips() {
+    rez.style.opacity=0;
 }
 function to_test_filips() {
     location.href='/main/FilipsTest/test/';

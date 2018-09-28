@@ -1,21 +1,9 @@
 
-#nice{
-    color:darkcyan;
-    position: absolute;
-    top: 100px;
-    left:45%;
+#rez{
+    transition: opacity 1s;
 }
-#fear {
-    position: absolute;
-    top: 100px;
-    left: 100px;
-}
-#text {
-    color: chartreuse;
-    position: absolute;
-    top: 1000px;
-    left: 45%;
-}
+
+
 #button_to_start{
     position: absolute;
     top: 400px;
@@ -99,7 +87,6 @@
     border-radius: 20px;
     margin: auto;
     margin-top: 170px;
-    padding: 10px;
     border: outset wheat;
 }
 #start_test_text{
@@ -122,4 +109,7 @@
 }
 #button_to_test_filips:hover{
     background: burlywood;
+}
+#rezults_table_filips{
+
 }
