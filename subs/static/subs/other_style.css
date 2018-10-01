@@ -110,6 +110,7 @@
 #button_to_test_filips:hover{
     background: burlywood;
 }
-#rezults_table_filips{
-
+#rezults_table_filips {
+    position: absolute;
+    left: 100px;
 }
