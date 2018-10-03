@@ -2,109 +2,101 @@
 <html lang="en">
 <head>
     <script type="text/javascript" src = "{% static 'subs/scripts.js' %}"></script>
+    <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" />
     <meta charset="UTF-8">
     <title>Результаты прохождения теста</title>
 </head>
 <body>
-  <!--  <ul>
-        <li id="main_result_filips"></li>
-        <li id="anxiety_in_school"></li>
-        <li id="social_fear"></li>
-        <li id="frustration"></li>
-        <li id="fear_self_expressions"></li>
-        <li id="fear_situation_to_check"></li>
-        <li id="fear_not_waiting_social"></li>
-        <li id="low_resistance_stress"></li>
-        <li id="problems_and_fears_with_teachers"></li>
-    </ul>
-    <form>
-        <input type="button" value="Получить результаты:" onclick=give_results_filips()>
-    </form> -->
-    <div id="rezults_table_filips">
-        <table   border="5" style=" border-color: wheat; width: 1000px; height: 600px; border-style:outset">
+     <h1 id="title_filips3">Тест школьной тревожности Филлипса</h1>
+
+
+        <table   border="5" style=" border-color: wheat; width: 1000px; height: 600px; border-style:outset; margin: auto">
 
                 <tr>
                     <td>
-                        <p> Здесь ничего нету</p>
+                        <p id="res1">Основное прохождение: </p>
                     </td>
                     <td>
-                        <p>А тут есть</p>
+                        <p id="main_result_filips"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <p>2</p>
+                        <p id="res2">Общая тревожность в школе: </p>
                     </td>
                     <td>
-                        <p>2.1</p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <p>3</p>
-                    </td>
-                    <td>
-                        <p>3.1</p>
+                        <p id="anxiety_in_school"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <p>4</p>
+                        <p id="res3">Переживание социального стресса: </p>
                     </td>
                     <td>
-                        <p>4.1</p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <p>5</p>
-                    </td>
-                    <td>
-                        <p>5.1</p>
+                        <p id="social_fear"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <p>6</p>
+                        <p id="res4">Фрустрация потребности в достижении успеха: </p>
                     </td>
                     <td>
-                        <p>6.1</p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <p>7</p>
-                    </td>
-                    <td>
-                        <p>7.1</p>
+                        <p id="frustration"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <p>8</p>
+                        <p id="res5">Страх самовыражения: </p>
                     </td>
                     <td>
-                        <p>8.1</p>
+                        <p id="fear_self_expression"></p>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <p>9</p>
+                        <p id="res6">Страх ситуации проверки знаний: </p>
                     </td>
                     <td>
-                        <p>9.1</p>
+                        <p id="fear_situation_to_check"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p id="res7">Страх несоответствовать ожиданиям окружающих: </p>
+                    </td>
+                    <td>
+                        <p id="fear_not_waiting_social"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p id="res8">Низкая физиологическая сопротивляемость стрессу: </p>
+                    </td>
+                    <td>
+                        <p id="low_resistance_stress"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p id="res9">Проблемы и страхи в отношениях с учителями: </p>
+                    </td>
+                    <td>
+                        <p id="problems_and_fears_with_teachers"></p>
                     </td>
                 </tr>
 
         </table>
-    </div>
+   <form>
+        <input type="button" value="Получить результаты:" onclick=give_results_filips()>
+   </form>
+
 </body>
 </html>

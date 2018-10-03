@@ -10,24 +10,39 @@ var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration
 
 //Test Filips
 function give_results_filips() {
-    main_choice_quest = sessionStorage.getItem('main_choice_quest');
-    anxiety_in_school = sessionStorage.getItem('anxiety_in_school');
-    social_fear = sessionStorage.getItem('social_fear');
-    frustration = sessionStorage.getItem('frustration');
-    fear_self_expressions = sessionStorage.getItem('fear_self_expressions');
-    fear_situation_to_check = sessionStorage.getItem('fear_situation_to_check');
-    fear_not_waiting_social = sessionStorage.getItem('fear_not_waiting_social');
-    low_resistance_stress = sessionStorage.getItem('low_resistance_stress');
-    problems_and_fears_with_teachers = sessionStorage.getItem('problems_and_fears_with_teachers');
-    document.getElementById('main_result_filips').innerText = 'Основное прохождение: ' + main_choice_quest;
-    document.getElementById('anxiety_in_school').innerText = 'Общая тревожность в школе: ' + anxiety_in_school;
-    document.getElementById('social_fear').innerText = 'Переживание социального стресса: ' + social_fear;
-    document.getElementById('frustration').innerText = 'Фрустрация потребности в достижении успеха: ' + frustration;
-    document.getElementById('fear_self_expressions').innerText = 'Страх самовыражения: ' + fear_self_expressions;
-    document.getElementById('fear_situation_to_check').innerText = 'Страх ситуации проверки знаний: ' + fear_situation_to_check;
-    document.getElementById('fear_not_waiting_social').innerText = 'Страх несоответствовать ожиданиям окружающих: ' + fear_not_waiting_social;
-    document.getElementById('low_resistance_stress').innerText = 'Низкая физиологическая сопротивляемость стрессу: ' + low_resistance_stress;
-    document.getElementById('problems_and_fears_with_teachers').innerText = 'Проблемы и страхи в отношениях с учителями: ' + problems_and_fears_with_teachers;
+    main_choice_quest = sessionStorage.getItem('main_choice_quest'); //1.72%
+    main_choice_quest = main_choice_quest*1.72;
+    main_choice_quest = main_choice_quest.toFixed(1);
+    anxiety_in_school = sessionStorage.getItem('anxiety_in_school'); //4.55%
+    anxiety_in_school = anxiety_in_school*4.55;
+    anxiety_in_school = anxiety_in_school.toFixed(1);
+    social_fear = sessionStorage.getItem('social_fear'); //9.1%
+    social_fear = social_fear*9.1;
+    social_fear = social_fear.toFixed(1);
+    frustration = sessionStorage.getItem('frustration'); //7.69%
+    frustration = frustration*7.69;
+    frustration = frustration.toFixed(1);
+    fear_self_expressions = sessionStorage.getItem('fear_self_expressions'); //16.67
+    fear_self_expressions = fear_self_expressions*16.67;
+    fear_self_expressions = fear_self_expressions.toFixed(1);
+    fear_situation_to_check = sessionStorage.getItem('fear_situation_to_check'); //16.67
+    fear_situation_to_check = fear_situation_to_check*16.67;
+    fear_situation_to_check = fear_situation_to_check.toFixed(1);
+    fear_not_waiting_social = sessionStorage.getItem('fear_not_waiting_social'); //20
+    fear_not_waiting_social = fear_not_waiting_social * 20;
+    low_resistance_stress = sessionStorage.getItem('low_resistance_stress'); //20
+    low_resistance_stress = low_resistance_stress*20;
+    problems_and_fears_with_teachers = sessionStorage.getItem('problems_and_fears_with_teachers'); //12.5
+    problems_and_fears_with_teachers = problems_and_fears_with_teachers*12.5;
+    document.getElementById('main_result_filips').innerText = main_choice_quest+'%';
+    document.getElementById('anxiety_in_school').innerText = anxiety_in_school+'%';
+    document.getElementById('social_fear').innerText = social_fear+'%';
+    document.getElementById('frustration').innerText = frustration+'%';
+    document.getElementById('fear_self_expression').innerText =fear_self_expressions+'%';
+    document.getElementById('fear_situation_to_check').innerText = fear_situation_to_check+'%';
+    document.getElementById('fear_not_waiting_social').innerText = fear_not_waiting_social+'%';
+    document.getElementById('low_resistance_stress').innerText = low_resistance_stress+'%';
+    document.getElementById('problems_and_fears_with_teachers').innerText = problems_and_fears_with_teachers+'%';
 }
 
     // Main
@@ -807,7 +822,7 @@ function test_filips() {
             sessionStorage.setItem('problems_and_fears_with_teachers',problems_and_fears_with_teachers);
             sessionStorage.setItem('frustration',frustration);
             sessionStorage.setItem('low_resistance_stress', low_resistance_stress);
-            sessionStorage.setItem('anxiety_in_school', fear_self_expressions);
+            sessionStorage.setItem('fear_self_expressions', fear_self_expressions);
             sessionStorage.setItem('fear_situation_to_check', fear_situation_to_check);
             sessionStorage.setItem('anxiety_in_school', anxiety_in_school);
             number_quest = 1;
