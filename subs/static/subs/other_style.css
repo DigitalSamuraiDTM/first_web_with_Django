@@ -12,7 +12,7 @@
 
 #test_filips{
     width: 940px;
-    height: 215px;
+    height: 270px;
     border-radius: 20px;
     margin: auto;
     margin-top: 170px;
@@ -145,4 +145,30 @@
     font-family: "Lato", sans-serif;
     letter-spacing: -0.3px;
     font-size: 20px;
+}
+
+#percent_filips{
+    position: relative;
+    font-size: 25px;
+    left:422px;
+    top:1px;
+
+}
+
+#filips_progress_bar{
+    height: 25px;
+    width: 0px;
+    background-color: wheat;
+    border-radius: 30px;
+    -webkit-transition: 0.5s;
+}
+
+#filips_progress_border{
+    position: relative;
+    top: 30px;
+    left: 40px;
+    width: 855px; /* 15 */
+    height:25px ;
+    border: 2px burlywood solid;
+    border-radius: 30px;
 }

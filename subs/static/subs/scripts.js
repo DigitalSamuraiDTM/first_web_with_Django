@@ -3,6 +3,7 @@ var yes = false;
 var no = false;
 var number_quest = 0,fear_not_waiting_social = 0, low_resistance_stress = 0, problems_and_fears_with_teachers = 0 ;
 var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration = 0, fear_self_expressions = 0, fear_situation_to_check = 0 ;
+var progress_bar = 0, percent_test =1;
 //on load
 
 
@@ -74,25 +75,34 @@ function to_start_filips() {
 }
 
 function to_magic_filips() {
-    rez.style.opacity=0;
+    x+=1;
+    document.getElementById('rez').innerText=x;
+
+    progress_bar=10+progress_bar;
+    progress.style.width=progress_bar;
 }
 function to_test_filips() {
     location.href='/main/FilipsTest/test/';
 }
 function on_yes_button() {
         yes = true;
+        progress_bar = progress_bar+15;
+        filips_progress_bar.style.width=progress_bar;
         test_filips();
 
 }
 function on_no_button() {
-
+        progress_bar = progress_bar+15;
+        filips_progress_bar.style.width=progress_bar;
         no = true;
         test_filips();
 
 }
 function test_filips() {
     number_quest+=1;
-
+    percent_test = 100/58*number_quest;
+    percent_test = percent_test.toFixed(0);
+    document.getElementById('percent_filips').innerText=percent_test+'%';
     switch (number_quest){
         case 1: {
             document.getElementById('filip_number_test').innerText='Вопрос 2/58';
@@ -105,6 +115,7 @@ function test_filips() {
             else if (no==true){
                 no = false;
                 main_choice_quest+=1;
+
                 }
             }
             break;
