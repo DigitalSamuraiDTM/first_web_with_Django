@@ -9,8 +9,8 @@
 <body>
      <h1 id="title_filips3">Тест школьной тревожности Филлипса</h1>
 
-
-        <table   border="5" style=" border-color: wheat; width: 1000px; height: 600px; border-style:outset; margin: auto">
+        <div>
+        <table   border="5" style=" border-color: wheat; width: 1000px; height: 700px; border-style:outset; margin: auto">
 
                 <tr>
                     <td>
@@ -20,6 +20,11 @@
                         <p id="main_result_filips"></p>
                     </td>
                 </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="main_result_filips_bar"></div>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
@@ -27,6 +32,12 @@
                     </td>
                     <td>
                         <p id="anxiety_in_school"></p>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="anxiety_in_school_bar"></div>
                     </td>
                 </tr>
 
@@ -38,6 +49,11 @@
                         <p id="social_fear"></p>
                     </td>
                 </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="social_fear_bar"></div>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
@@ -45,6 +61,11 @@
                     </td>
                     <td>
                         <p id="frustration"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="frustration_bar"></div>
                     </td>
                 </tr>
 
@@ -56,6 +77,11 @@
                         <p id="fear_self_expression"></p>
                     </td>
                 </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="fear_self_expression_bar"></div>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
@@ -63,6 +89,11 @@
                     </td>
                     <td>
                         <p id="fear_situation_to_check"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="fear_situation_to_check_bar"></div>
                     </td>
                 </tr>
 
@@ -74,6 +105,11 @@
                         <p id="fear_not_waiting_social"></p>
                     </td>
                 </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="fear_not_waiting_social_bar"></div>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
@@ -83,20 +119,32 @@
                         <p id="low_resistance_stress"></p>
                     </td>
                 </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="low_resistance_stress_bar"></div>
+                    </td>
+                </tr>
 
                 <tr>
                     <td>
                         <p id="res9">Проблемы и страхи в отношениях с учителями: </p>
                     </td>
-                    <td>
+                    <td style="width: 67px">
                         <p id="problems_and_fears_with_teachers"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 25px">
+                        <div id="problems_and_fears_with_teachers_bar"></div>
                     </td>
                 </tr>
 
         </table>
-   <form>
-        <input type="button" value="Получить результаты:" onclick=give_results_filips()>
-   </form>
+     <div id="hidden_results">
 
+        <input id="result_button" type="button" value="Получить результаты:" onclick=give_results_filips()>
+
+     </div>
+        </div>
 </body>
 </html>

@@ -3,7 +3,8 @@ var yes = false;
 var no = false;
 var number_quest = 0,fear_not_waiting_social = 0, low_resistance_stress = 0, problems_and_fears_with_teachers = 0 ;
 var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration = 0, fear_self_expressions = 0, fear_situation_to_check = 0 ;
-var progress_bar = 0, percent_test =1;
+var progress_bar = 0, percent_test =1, width_main_choice_quest_bar, width_anxiety_in_school_bar, width_social_fear_bar, width_frustration_bar, width_fear_self_expression_bar,
+width_fear_situation_to_check_bar, width_fear_not_waiting_bar, width_low_resistance_stress, width_problems;
 //on load
 
 
@@ -11,14 +12,15 @@ var progress_bar = 0, percent_test =1;
 
 //Test Filips
 function give_results_filips() {
+
     main_choice_quest = sessionStorage.getItem('main_choice_quest'); //1.72%
     main_choice_quest = main_choice_quest*1.72;
     main_choice_quest = main_choice_quest.toFixed(1);
     anxiety_in_school = sessionStorage.getItem('anxiety_in_school'); //4.55%
-    anxiety_in_school = anxiety_in_school*4.55;
+    anxiety_in_school = anxiety_in_school*4.54;
     anxiety_in_school = anxiety_in_school.toFixed(1);
     social_fear = sessionStorage.getItem('social_fear'); //9.1%
-    social_fear = social_fear*9.1;
+    social_fear = social_fear*9.09;
     social_fear = social_fear.toFixed(1);
     frustration = sessionStorage.getItem('frustration'); //7.69%
     frustration = frustration*7.69;
@@ -31,10 +33,13 @@ function give_results_filips() {
     fear_situation_to_check = fear_situation_to_check.toFixed(1);
     fear_not_waiting_social = sessionStorage.getItem('fear_not_waiting_social'); //20
     fear_not_waiting_social = fear_not_waiting_social * 20;
+    fear_not_waiting_social = fear_not_waiting_social.toFixed(1);
     low_resistance_stress = sessionStorage.getItem('low_resistance_stress'); //20
     low_resistance_stress = low_resistance_stress*20;
+    low_resistance_stress = low_resistance_stress.toFixed(1);
     problems_and_fears_with_teachers = sessionStorage.getItem('problems_and_fears_with_teachers'); //12.5
     problems_and_fears_with_teachers = problems_and_fears_with_teachers*12.5;
+    problems_and_fears_with_teachers = problems_and_fears_with_teachers.toFixed(1);
     document.getElementById('main_result_filips').innerText = main_choice_quest+'%';
     document.getElementById('anxiety_in_school').innerText = anxiety_in_school+'%';
     document.getElementById('social_fear').innerText = social_fear+'%';
@@ -44,6 +49,131 @@ function give_results_filips() {
     document.getElementById('fear_not_waiting_social').innerText = fear_not_waiting_social+'%';
     document.getElementById('low_resistance_stress').innerText = low_resistance_stress+'%';
     document.getElementById('problems_and_fears_with_teachers').innerText = problems_and_fears_with_teachers+'%';
+
+
+
+    width_main_choice_quest_bar = 910/100 * main_choice_quest;
+    main_result_filips_bar.style.width = width_main_choice_quest_bar;
+    width_anxiety_in_school_bar = 910/100 * anxiety_in_school;
+    anxiety_in_school_bar.style.width = width_anxiety_in_school_bar;
+    width_social_fear_bar = 910/100 * social_fear;
+    social_fear_bar.style.width = width_social_fear_bar;
+    width_frustration_bar = 910 / 100 * frustration;
+    frustration_bar.style.width = width_frustration_bar;
+    width_fear_self_expression_bar = 910 / 100 * fear_self_expressions;
+    fear_self_expression_bar.style.width = width_fear_self_expression_bar;
+    width_fear_situation_to_check_bar = 910 / 100 * fear_situation_to_check;
+    fear_situation_to_check_bar.style.width = width_fear_situation_to_check_bar;
+    width_fear_not_waiting_bar = 910 / 100 * fear_not_waiting_social;
+    fear_not_waiting_social_bar.style.width = width_fear_not_waiting_bar;
+    width_low_resistance_stress = 910 / 100 * low_resistance_stress;
+    low_resistance_stress_bar.style.width = width_low_resistance_stress;
+    width_problems = 910 / 100 * problems_and_fears_with_teachers;
+    problems_and_fears_with_teachers_bar.style.width = width_problems;
+    hidden_results.style.opacity = 0;
+    result_button.style.opacity = 0;
+
+    if (main_choice_quest>=50 && main_choice_quest<75){
+        main_result_filips_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (main_choice_quest>=75 && main_choice_quest<90){
+            main_result_filips_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (main_choice_quest >= 90) {
+                main_result_filips_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+
+    if (anxiety_in_school>=50 && anxiety_in_school<75){
+        anxiety_in_school_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (anxiety_in_school>=75 && anxiety_in_school<90){
+            anxiety_in_school_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (anxiety_in_school >=90) {
+                anxiety_in_school_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+    if (social_fear>=50 && social_fear<75){
+        social_fear_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (social_fear>=75 && social_fear<90){
+            social_fear_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (social_fear >= 90) {
+                social_fear_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+    if (frustration>=50 && frustration<75){
+        frustration_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (frustration>=75 && frustration<90){
+            frustration_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (frustration >= 90) {
+                frustration_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+    if (fear_self_expressions>=50 && fear_self_expressions<75){
+        fear_self_expression_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (fear_self_expressions>=75 && fear_self_expressions<90){
+            fear_self_expression_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (fear_self_expressions >= 90) {
+                fear_self_expression_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+    if (fear_situation_to_check>=50 && fear_situation_to_check<75){
+        fear_situation_to_check_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (fear_situation_to_check>=75 && fear_situation_to_check<90){
+            fear_situation_to_check_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (fear_situation_to_check >= 90) {
+                fear_situation_to_check_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+
+    if (fear_not_waiting_social>=50 && fear_not_waiting_social<75){
+        fear_not_waiting_social_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (fear_not_waiting_social>=75 && fear_not_waiting_social<90){
+            fear_not_waiting_social_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (fear_not_waiting_social >= 90) {
+                fear_not_waiting_social_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+    if (low_resistance_stress>=50 && low_resistance_stress<75){
+        low_resistance_stress_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if (low_resistance_stress>=75 && low_resistance_stress<90){
+            low_resistance_stress_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (low_resistance_stress >= 90) {
+                low_resistance_stress_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
+    if ( problems_and_fears_with_teachers>=50 &&  problems_and_fears_with_teachers<75){
+        problems_and_fears_with_teachers_bar.style.backgroundColor = '#F1F87C';
+    } else{
+        if ( problems_and_fears_with_teachers>75 &&  problems_and_fears_with_teachers<90){
+            problems_and_fears_with_teachers_bar.style.backgroundColor = '#FDC75D';
+        } else {
+            if (problems_and_fears_with_teachers_bar >= 90) {
+                problems_and_fears_with_teachers_bar.style.backgroundColor = '#F6847A';
+            }
+        }
+    }
 }
 
     // Main
@@ -440,7 +570,7 @@ function test_filips() {
             document.getElementById('filip_text_test').innerText='Чувствуешь ли ты, что твое сердце начинает сильно биться, когда учитель говорит, что собирается проверить твою готовность к уроку?';
             if (yes==true) {
                 yes = false;
-                fear_self_expressions+=1;
+
 
             }
             else if (no==true){
@@ -491,7 +621,7 @@ function test_filips() {
             document.getElementById('filip_text_test').innerText='Как ты думаешь, теряют ли расположение те из учеников, которые не справляются с учебой?';
             if (yes==true) {
                 yes = false;
-                fear_self_expressions+=1;
+
             }
             else if (no==true){
                 no = false;
@@ -529,7 +659,7 @@ function test_filips() {
             document.getElementById('filip_text_test').innerText='Доволен ли ты тем, как к тебе относятся учителя?';
             if (yes==true) {
                 yes = false;
-                fear_self_expressions+=1;
+
             }
             else if (no==true){
                 no = false;
@@ -567,7 +697,7 @@ function test_filips() {
             document.getElementById('filip_text_test').innerText=' Надеешься ли ты в будущем учиться лучше, чем сейчас?';
             if (yes==true) {
                 yes = false;
-                fear_self_expressions+=1;
+
             }
             else if (no==true){
                 no = false;
@@ -604,7 +734,7 @@ function test_filips() {
             document.getElementById('filip_text_test').innerText=' Обладают ли способные ученики какими–то особыми правами, которых нет у других ребят в классе?';
             if (yes==true) {
                 yes = false;
-                fear_self_expressions+=1;
+
 
             }
             else if (no==true){
@@ -668,7 +798,7 @@ function test_filips() {
             document.getElementById('filip_text_test').innerText=' Думаешь ли ты, что беспокоишься о своих школьных делах больше, чем другие ребята?';
             if (yes==true) {
                 yes = false;
-                fear_self_expressions+=1;
+
             }
             else if (no==true){
                 no = false;
@@ -840,7 +970,6 @@ function test_filips() {
             location.href='/main/FilipsTest/results/';
             break;
     }
-    document.getElementById('hate').innerText=main_choice_quest;
 
 }
 
