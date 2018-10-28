@@ -170,13 +170,15 @@
 }
 
 #hidden_results{
-    background-color: grey;
+    background-color: white;
     position: absolute;
     z-index: 50;
     width: 100%;
-    height: 100%;
+    height: 750px;
     transition: 1s;
     visibility: visible;
+    left: 0px;
+    top: 50px;
 }
 
 #result_button{
@@ -204,7 +206,7 @@
     border-color: wheat;
     width: 1000px;
     height: 700px;
-    border-style:outset;
+    border-style: outset;
     visibility: visible;
     z-index: 0;
     left: 50%;
@@ -217,7 +219,7 @@
     z-index: 0;
     height: 1000px;
     width: 1000px;
-    background-color: aliceblue;
+    background-color: white;
     position: absolute;
     left:50%;
     top: 1300px;
@@ -229,4 +231,16 @@
     font-size: 30px;
     font-family: "Lato", sans-serif;
     text-align: center;
+}
+
+#help_with_results_1, #help_with_results_2, #help_with_results_3, #help_with_results_4, #help_with_results_5, #help_with_results_6,
+#help_with_results_7, #help_with_results_8, #help_with_results_9{
+    border: 1px;
+    width: 1000px;
+    height: 100px;
+    border-color: wheat;
+    border-style: outset;
+}
+#text_help_1, #text_help_2, #text_help_3, #text_help_4, #text_help_5, #text_help_6, #text_help_7, #text_help_8, #text_help_9{
+    font-size: 18px;
 }
