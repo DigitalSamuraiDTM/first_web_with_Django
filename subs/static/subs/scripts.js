@@ -6,16 +6,22 @@ var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration
 var progress_bar = 0, percent_test =1, width_main_choice_quest_bar, width_anxiety_in_school_bar, width_social_fear_bar, width_frustration_bar, width_fear_self_expression_bar,
 width_fear_situation_to_check_bar, width_fear_not_waiting_bar, width_low_resistance_stress, width_problems;
 //on load
-
+function load_to_main() {
+    location.href='/main/'
+}
 
 
 
 //Test Filips
+function hide_result_bar() {
+    hidden_results.style.visibility='hidden';
+}
 function give_results_filips() {
 
     main_choice_quest = sessionStorage.getItem('main_choice_quest'); //1.72%
     main_choice_quest = main_choice_quest*1.72;
     main_choice_quest = main_choice_quest.toFixed(1);
+    main_choice_quest = 100 - main_choice_quest;
     anxiety_in_school = sessionStorage.getItem('anxiety_in_school'); //4.55%
     anxiety_in_school = anxiety_in_school*4.54;
     anxiety_in_school = anxiety_in_school.toFixed(1);
@@ -72,6 +78,7 @@ function give_results_filips() {
     problems_and_fears_with_teachers_bar.style.width = width_problems;
     hidden_results.style.opacity = 0;
     result_button.style.opacity = 0;
+    setTimeout(hide_result_bar,10);
 
     if (main_choice_quest>=50 && main_choice_quest<75){
         main_result_filips_bar.style.backgroundColor = '#F1F87C';

@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from subs import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/' , include('subs.urls')) #include отрезает запрос до места указанного в ковычках и
+    path('', views.zero , name='zero'),
+    path('main/' , include('subs.urls'))   #include отрезает запрос до места указанного в ковычках и
                                             #  отправляет оставшуюся часть. Используется всегда кроме admin
 ]

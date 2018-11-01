@@ -25,3 +25,5 @@ def rezults(request):
 def FilipsTest(request):
     return render(request,'subs/test_filips/test.html')
 
+def zero(request):
+    return render(request, 'subs/zero.html')

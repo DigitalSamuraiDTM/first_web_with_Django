@@ -241,6 +241,47 @@
     border-color: wheat;
     border-style: outset;
 }
+
 #text_help_1, #text_help_2, #text_help_3, #text_help_4, #text_help_5, #text_help_6, #text_help_7, #text_help_8, #text_help_9{
     font-size: 18px;
+    font-family: "Lato", sans-serif;
+}
+
+ #help_with_results_bars{
+    z-index: 0;
+    height: 220px;
+    width: 1000px;
+    background-color: white;
+    position: absolute;
+    left:50%;
+    top: 1200px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#color_help{
+    font-size: 18px;
+    border: outset wheat;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+}
+
+#back_to_main{
+    z-index: 0;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 80px;
+    width: 300px;
+    border: 1px solid burlywood;
+    background: wheat;
+    border-radius: 15px;
+    outline: none;
+    -webkit-transition: 0.1s;
+    font-size: 21px;
+    font-family: "Lato", sans-serif;
+    top: 2200px;
+}
+#back_to_main:hover{
+    background-color: burlywood;
 }
