@@ -9,9 +9,6 @@ width_fear_situation_to_check_bar, width_fear_not_waiting_bar, width_low_resista
 function load_to_main() {
     location.href='/main/'
 }
-
-
-
 //Test Filips
 function hide_result_bar() {
     hidden_results.style.visibility='hidden';
@@ -76,6 +73,7 @@ function give_results_filips() {
     low_resistance_stress_bar.style.width = width_low_resistance_stress;
     width_problems = 910 / 100 * problems_and_fears_with_teachers;
     problems_and_fears_with_teachers_bar.style.width = width_problems;
+
     hidden_results.style.opacity = 0;
     result_button.style.opacity = 0;
     setTimeout(hide_result_bar,10);

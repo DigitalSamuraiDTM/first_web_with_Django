@@ -84,7 +84,6 @@
 }
 
 #block_start_text{
-    background-color: white;
     width: 940px;
     height: 215px;
     border-radius: 20px;
@@ -282,6 +281,7 @@
     font-family: "Lato", sans-serif;
     top: 2200px;
 }
+
 #back_to_main:hover{
     background-color: burlywood;
 }
