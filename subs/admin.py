@@ -1,4 +1,7 @@
 from django.contrib import admin
-from .models import Quest
+from .models import Quest, User
 
-admin.site.register(Quest) #регистрация модели в админке Quest
+
+admin.site.register(Quest) #регистрация модели Quest в админке
+
+admin.site.register(User)

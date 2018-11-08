@@ -1,18 +1,19 @@
-var par = Number(sessionStorage.getItem('par'));
+
 var yes = false;
 var no = false;
 var number_quest = 0,fear_not_waiting_social = 0, low_resistance_stress = 0, problems_and_fears_with_teachers = 0 ;
 var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration = 0, fear_self_expressions = 0, fear_situation_to_check = 0 ;
 var progress_bar = 0, percent_test =1, width_main_choice_quest_bar, width_anxiety_in_school_bar, width_social_fear_bar, width_frustration_bar, width_fear_self_expression_bar,
 width_fear_situation_to_check_bar, width_fear_not_waiting_bar, width_low_resistance_stress, width_problems;
-//on load
+
 function load_to_main() {
     location.href='/main/'
 }
-//Test Filips
+
 function hide_result_bar() {
     hidden_results.style.visibility='hidden';
 }
+
 function give_results_filips() {
 
     main_choice_quest = sessionStorage.getItem('main_choice_quest'); //1.72%
@@ -181,29 +182,10 @@ function give_results_filips() {
     }
 }
 
-    // Main
-
-
-
-
-
-
-
-
-//Others functions
-
-function param_ready() {
-    if (sessionStorage.getItem('par') !== 0) {
-        document.getElementById('key').innerText="Переменная есть";
-        par = sessionStorage.getItem('par');
-        document.getElementById('rez2').innerText=par;
-    }
-}
 function back_to_main() {
 
     location.href='/main/';
 }
-
 
 function to_start_filips() {
     location.href='/main/FilipsTest/start/'
@@ -216,9 +198,11 @@ function to_magic_filips() {
     progress_bar=10+progress_bar;
     progress.style.width=progress_bar;
 }
+
 function to_test_filips() {
     location.href='/main/FilipsTest/test/';
 }
+
 function on_yes_button() {
         yes = true;
         progress_bar = progress_bar+15;
@@ -226,6 +210,7 @@ function on_yes_button() {
         test_filips();
 
 }
+
 function on_no_button() {
         progress_bar = progress_bar+15;
         filips_progress_bar.style.width=progress_bar;
@@ -233,6 +218,7 @@ function on_no_button() {
         test_filips();
 
 }
+
 function test_filips() {
     number_quest+=1;
     percent_test = 100/58*number_quest;
@@ -977,4 +963,34 @@ function test_filips() {
     }
 
 }
+
+function to_register_page() {
+    location.href='/main/register/'
+}
+
+function check_name(){
+    console.log('Запрос прошел');
+    $.ajax({
+       type:"GET", //тип запроса
+       url:"check_login/", //url запроса
+       data:{ //данные, которые принимаются из шаблона
+           'login':$("#user_login").val(), //выборка данных по айди
+       },
+       dataType:"text", //тип данных
+        cache: false,
+       success: function (data) { //функция выполняющаяся после ответа сервера
+           if (data == "good"){
+                console.log('Имя свободно');
+           }
+           else if (data == "bad"){
+                console.log('Имя есть в базе данных!');
+           }
+       }
+    });
+}
+
+
+
+
+
 
