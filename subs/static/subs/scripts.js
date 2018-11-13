@@ -1,6 +1,5 @@
-
 var yes = false;
-var no = false;
+var no = false, repeat_password_val='', password_val='';
 var number_quest = 0,fear_not_waiting_social = 0, low_resistance_stress = 0, problems_and_fears_with_teachers = 0 ;
 var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration = 0, fear_self_expressions = 0, fear_situation_to_check = 0 ;
 var progress_bar = 0, percent_test =1, width_main_choice_quest_bar, width_anxiety_in_school_bar, width_social_fear_bar, width_frustration_bar, width_fear_self_expression_bar,
@@ -189,14 +188,6 @@ function back_to_main() {
 
 function to_start_filips() {
     location.href='/main/FilipsTest/start/'
-}
-
-function to_magic_filips() {
-    x+=1;
-    document.getElementById('rez').innerText=x;
-
-    progress_bar=10+progress_bar;
-    progress.style.width=progress_bar;
 }
 
 function to_test_filips() {
@@ -969,7 +960,7 @@ function to_register_page() {
 }
 
 function check_name(){
-    console.log('Запрос прошел');
+
     $.ajax({
        type:"GET", //тип запроса
        url:"check_login/", //url запроса
@@ -980,16 +971,52 @@ function check_name(){
         cache: false,
        success: function (data) { //функция выполняющаяся после ответа сервера
            if (data == "good"){
-                console.log('Имя свободно');
+                document.getElementById('true_login').innerText='Свободно с:';
            }
            else if (data == "bad"){
-                console.log('Имя есть в базе данных!');
+                document.getElementById('true_login').innerText='Этот логин занят, попробуйте другой!';
            }
        }
     });
+
 }
 
+function check_mail(){
+    console.log('awdawdpha');
+    $.ajax({
+        type:"GET",
+        url:"check_mail",
+        data:{
+            'mail':$('#e_mail').val(),
+        },
+        cache: false,
+        success: function (data) {
+            if (data=="good"){
 
+                document.getElementById('true_mail').innerText='Хорошее мыло!';
+
+            }
+            else if (data=="bad"){
+                document.getElementById('true_mail').innerText='Такое мыло у нас уже есть!';
+            }
+        }
+    })
+}
+
+function check_repeat_password() {
+
+    repeat_password_val = document.getElementById('repeat_password').value;
+    password_val=document.getElementById('password').value;
+    if (password_val==repeat_password_val){
+        repeat_password.style.borderColor='lightgreen';
+        document.getElementById('true_repeat_password').innerText='Пароли совпадают';
+    }
+    else {
+        repeat_password.style.borderColor='red';
+        document.getElementById('true_repeat_password').innerText='НЕ СОВПАДАЮТ';
+    }
+
+}
 
 
 

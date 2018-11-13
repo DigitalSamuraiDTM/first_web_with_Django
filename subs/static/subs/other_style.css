@@ -246,7 +246,7 @@
     font-family: "Lato", sans-serif;
 }
 
- #help_with_results_bars{
+#help_with_results_bars{
     z-index: 0;
     height: 220px;
     width: 1000px;
@@ -284,4 +284,71 @@
 
 #back_to_main:hover{
     background-color: burlywood;
+}
+
+#register_block_1{
+    position: absolute;
+    left:50%;
+    top: 500px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 250px;
+    border: 1px;
+}
+
+#user_login, #e_mail, #input_school, #password, #repeat_password{
+    position: relative;
+    height: 30px;
+    width: 250px;
+    border-color: burlywood;
+    border-radius: 5px;
+    outline: none;
+    font-family: "Lato", sans-serif;
+    font-size: 17px;
+}
+
+#user_login{
+    top: 10px;
+}
+
+#e_mail{
+    top: 20px;
+}
+
+#password{
+    top: 30px;
+}
+
+#repeat_password{
+    top: 40px;
+}
+
+#registration_h1{
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 30px;
+}
+
+#check_input_register{
+    position: absolute;
+    left:69%;
+    top: 450px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    font-family: "Lato", sans-serif;
+}
+#true_mail{
+    position: relative;
+    top: 6px;
+}
+
+#true_password{
+    top: 12px;
+    position: relative;
+}
+#true_repeat_password{
+    position: relative;
+    top: 17px;
 }
