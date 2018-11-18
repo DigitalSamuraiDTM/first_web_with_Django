@@ -32,7 +32,6 @@
     font-size: 17px;
     font-family: "Lato", sans-serif;
 }
-
 #button_test_filips_yes:hover{
     background:burlywood ;
 }
@@ -51,7 +50,6 @@
     font-family: "Lato", sans-serif;
 
 }
-
 #button_test_filips_no:hover{
     background: burlywood;
 }
@@ -111,7 +109,6 @@
     font-size: 17px;
     font-family: "Lato", sans-serif;
 }
-
 #button_to_test_filips:hover{
     background: burlywood;
 }
@@ -289,7 +286,7 @@
 #register_block_1{
     position: absolute;
     left:50%;
-    top: 500px;
+    top: 300px;
     margin-right: 50%;
     transform: translate(-50%,-50%);
     height: 500px;
@@ -332,23 +329,53 @@
 
 #check_input_register{
     position: absolute;
-    left:69%;
-    top: 450px;
+    left:76%;
+    top: 227px;
     margin-right: 50%;
     transform: translate(-50%,-50%);
-    width: 200px;
+    width: 400px;
     font-family: "Lato", sans-serif;
-}
-#true_mail{
-    position: relative;
-    top: 6px;
+    height: 200px;
 }
 
+#true_login{
+    position: absolute;
+    top: 48px;
+}
+#true_mail{
+    position: absolute;
+    top: 88px;
+}
 #true_password{
-    top: 12px;
-    position: relative;
+    top: 129px;
+    position: absolute;
 }
 #true_repeat_password{
-    position: relative;
-    top: 17px;
+    position: absolute;
+    top: 169px;
+}
+#true_school{
+    position: absolute;
+    top: 8px;
+}
+
+#submit_button{
+
+    height: 60px;
+    width: 200px;
+    border: 1px solid burlywood;
+    background: wheat;
+    border-radius: 15px;
+    outline: none;
+    -webkit-transition: 0.1s;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    left:50%;
+    top: 400px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+}
+#submit_button:hover{
+    background: burlywood;
 }

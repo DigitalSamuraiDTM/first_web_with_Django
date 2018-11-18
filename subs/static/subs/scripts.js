@@ -1,5 +1,5 @@
-var yes = false;
-var no = false, repeat_password_val='', password_val='';
+var yes = false, good_login = false, good_mail = false, good_school = false, good_password = false, good_repeat_password = false;
+var no = false, repeat_password_val='', password_val='', username='', school='';
 var number_quest = 0,fear_not_waiting_social = 0, low_resistance_stress = 0, problems_and_fears_with_teachers = 0 ;
 var  main_choice_quest = 0, anxiety_in_school = 0, social_fear = 0,  frustration = 0, fear_self_expressions = 0, fear_situation_to_check = 0 ;
 var progress_bar = 0, percent_test =1, width_main_choice_quest_bar, width_anxiety_in_school_bar, width_social_fear_bar, width_frustration_bar, width_fear_self_expression_bar,
@@ -958,66 +958,6 @@ function test_filips() {
 function to_register_page() {
     location.href='/main/register/'
 }
-
-function check_name(){
-
-    $.ajax({
-       type:"GET", //тип запроса
-       url:"check_login/", //url запроса
-       data:{ //данные, которые принимаются из шаблона
-           'login':$("#user_login").val(), //выборка данных по айди
-       },
-       dataType:"text", //тип данных
-        cache: false,
-       success: function (data) { //функция выполняющаяся после ответа сервера
-           if (data == "good"){
-                document.getElementById('true_login').innerText='Свободно с:';
-           }
-           else if (data == "bad"){
-                document.getElementById('true_login').innerText='Этот логин занят, попробуйте другой!';
-           }
-       }
-    });
-
-}
-
-function check_mail(){
-    console.log('awdawdpha');
-    $.ajax({
-        type:"GET",
-        url:"check_mail",
-        data:{
-            'mail':$('#e_mail').val(),
-        },
-        cache: false,
-        success: function (data) {
-            if (data=="good"){
-
-                document.getElementById('true_mail').innerText='Хорошее мыло!';
-
-            }
-            else if (data=="bad"){
-                document.getElementById('true_mail').innerText='Такое мыло у нас уже есть!';
-            }
-        }
-    })
-}
-
-function check_repeat_password() {
-
-    repeat_password_val = document.getElementById('repeat_password').value;
-    password_val=document.getElementById('password').value;
-    if (password_val==repeat_password_val){
-        repeat_password.style.borderColor='lightgreen';
-        document.getElementById('true_repeat_password').innerText='Пароли совпадают';
-    }
-    else {
-        repeat_password.style.borderColor='red';
-        document.getElementById('true_repeat_password').innerText='НЕ СОВПАДАЮТ';
-    }
-
-}
-
 
 
 

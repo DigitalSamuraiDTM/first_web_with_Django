@@ -5,38 +5,40 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
-    <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type = 'text/javascript' src = "{% static 'subs/register_script.js' %}"></script>
+
     <title>Регистрация</title>
 </head>
 <body>
 
     <article>
 
-        <form method="post" action="{% url 'signup' %}">
+        <form method="post" action="{% url 'signup' %}" onsubmit="return check_submit()">
             <section id="register_block_1">
             {% csrf_token %}
             <h1 id="registration_h1">Регистрация</h1>
 
-            <input type="text" name="school" placeholder=" Школа" aria-describedby="basic-addon1" id="input_school">
+            <input type="text" name="school" placeholder=" Школа" aria-describedby="basic-addon1" id="input_school" onkeyup=check_school()>
 
             <input type="text" name="login" placeholder=" логин" aria-describedby="basic-addon1" id="user_login" onkeyup=check_name()>
 
-            <input type="text" name="mail" placeholder=" e-mail" aria-describedby="basic-addon1" id="e_mail" onchange=check_mail()>
+            <input type="text" name="mail" placeholder=" e-mail" aria-describedby="basic-addon1" id="e_mail">
 
-            <input type="password" name="password" id="password"  placeholder=" пароль" aria-describedby="basic-addon1" onkeyup= >
+            <input type="password" name="password" id="password"  placeholder=" пароль" aria-describedby="basic-addon1" onkeyup=check_len_password()>
 
             <input type="password" name="repeat_password" placeholder=" Повторите пароль" id="repeat_password" aria-describedby="basic-addon1" onkeyup=check_repeat_password()>
 
             </section>
             <section id="check_input_register">
-                <p id="true_login">Тут логин</p>
-                <p id="true_mail">Тут мыло хозяйственное</p>
-                <p id="true_password">Тут пароль</p>
-                <p id="true_repeat_password">Тут повторение пароля</p>
+                <p id="true_school"></p>
+                <p id="true_login"></p>
+                <p id="true_mail"></p>
+                <p id="true_password"></p>
+                <p id="true_repeat_password"></p>
             </section>
                 <section>
-                    <input type="submit">
+                    <input type="submit" value="Подтвердить" id="submit_button">
                 </section>
 
         </form>

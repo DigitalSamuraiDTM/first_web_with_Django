@@ -13,5 +13,10 @@
             <input type="button" value="Начать!" onclick=to_start_filips()>
         </form>
         <input type="button" value="На регистрацию" onclick=to_register_page() >
+    {% if not is_authenticated %}
+        <p>Залогинился</p>
+    {% else %}
+        <p>НЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕт</p>
+    {% endif %}
     </body>
 </html>
