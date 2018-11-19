@@ -11,7 +11,7 @@
     <title>Регистрация</title>
 </head>
 <body>
-
+{% block register %}
     <article>
 
         <form method="post" action="{% url 'signup' %}" onsubmit="return check_submit()">
@@ -44,6 +44,6 @@
         </form>
 
     </article>
-
+{% endblock %}
 </body>
 </html>

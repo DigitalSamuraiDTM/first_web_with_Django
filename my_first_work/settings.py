@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'subs.apps.SubsConfig', # Включение приложения в проект
     'django.contrib.admin', #административный сайт
-    'django.contrib.auth',  # система аутентификации
-    'django.contrib.contenttypes', # структура
+    'django.contrib.auth',  # система аутентификации пользователя
+    'django.contrib.contenttypes', # структура прав доступа
     'django.contrib.sessions', # Сессионная структура
     'django.contrib.messages', # Рамки обмена сообщениями
     'django.contrib.staticfiles', # Структура управления статическими файлами
@@ -41,10 +41,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',#управление сессиями во время запросов
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',#ассоциация пользователей с запросами с помощью сессий
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

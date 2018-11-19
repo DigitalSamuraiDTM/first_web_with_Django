@@ -1,6 +1,6 @@
 var good_login = false, good_mail = false, good_school = false, good_password = false, good_repeat_password = false;
 var repeat_password_val='', password_val='', username='', school='', email='';
-var r = /^\w+@\w+\.\w{2,4}$/i;
+
 
 function check_name(){
     username = document.getElementById('user_login').value;

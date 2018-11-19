@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type = 'text/javascript' src = "{% static 'subs/register_script.js' %}"></script>
+    <title>Авторизация</title>
+</head>
+<body>
+    <article>
+        <form method="post" action="{% url 'login' %}" >
+            <section id="register_block_1">
+            {% csrf_token %}
+            <h1 id="registration_h1">Авторизация</h1>
+
+            <input type="text" name="e_mail_log" placeholder=" e-mail" aria-describedby="basic-addon1" id="e_mail_log">
+
+            <input type="password" name="password_log" id="password_log"  placeholder=" пароль" aria-describedby="basic-addon1">
+
+            </section>
+                <section>
+                    <input type="submit" value="Войти" id="submit_button_log">
+                </section>
+        </form>
+    </article>
+</body>
+</html>

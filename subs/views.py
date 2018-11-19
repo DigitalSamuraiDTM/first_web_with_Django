@@ -11,6 +11,8 @@ def detail(request, a):
 def register(request):
     return render(request, 'subs/register.html')
 
+def login(request):
+    return render(request,'subs/login.html')
 
 def index(request):
     baton = 10
@@ -41,7 +43,7 @@ def signup(request):
     mail = request.POST.get("mail", False)
     password = request.POST.get("password", False)
     repeat_password = request.POST.get("repeat_password", False)
-    print(login, mail, school, password, repeat_password)
+
     if password == repeat_password:
         reg = User(school_name=school, user_name=login, e_mail=mail, password=password)
         reg.save()
@@ -65,3 +67,9 @@ def check_mail(request):
         return HttpResponse('good', content_type='text/html')
     else:
         return HttpResponse('bad', content_type='text/html')
+
+def login_user(request):
+    mail = request.POST.get('e_mail_log', False)
+    password = request.POST.get('password_log', False)
+    print(mail, password)
+    return HttpResponseRedirect('/main/login/')

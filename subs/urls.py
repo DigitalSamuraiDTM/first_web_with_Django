@@ -20,4 +20,8 @@ urlpatterns = [
 
     path('register/check_mail/', views.check_mail, name='check_mail'),
 
+    path('login/', views.login, name='login_html'),
+
+    path('login_user/', views.login_user, name='login'),
+
 ]

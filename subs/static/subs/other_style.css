@@ -294,7 +294,7 @@
     border: 1px;
 }
 
-#user_login, #e_mail, #input_school, #password, #repeat_password{
+#user_login, #e_mail, #input_school, #password, #repeat_password, #e_mail_log, #password_log{
     position: relative;
     height: 30px;
     width: 250px;
@@ -303,6 +303,10 @@
     outline: none;
     font-family: "Lato", sans-serif;
     font-size: 17px;
+}
+
+#password_log{
+    top: 15px;
 }
 
 #user_login{
@@ -359,7 +363,7 @@
     top: 8px;
 }
 
-#submit_button{
+#submit_button, #submit_button_log{
 
     height: 60px;
     width: 200px;
@@ -376,6 +380,11 @@
     margin-right: 50%;
     transform: translate(-50%,-50%);
 }
-#submit_button:hover{
+#submit_button,#submit_button_log:hover{
     background: burlywood;
 }
+
+#submit_button_log{
+    top: 300px;
+}
+
