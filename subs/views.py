@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import User
+from .models import children
+from django.contrib.auth.models import User
+from django.contrib import auth
 
 
 def detail(request, a):
@@ -11,8 +13,10 @@ def detail(request, a):
 def register(request):
     return render(request, 'subs/register.html')
 
+
 def login(request):
-    return render(request,'subs/login.html')
+    return render(request, 'subs/login.html')
+
 
 def index(request):
     baton = 10
@@ -45,7 +49,9 @@ def signup(request):
     repeat_password = request.POST.get("repeat_password", False)
 
     if password == repeat_password:
-        reg = User(school_name=school, user_name=login, e_mail=mail, password=password)
+        registr = User.objects.create_children(childrenname='Vasya', email='Vasya@list.ru', password='qwerty1234')
+        registr.save()
+        reg = children(school_name=school, children_name=login, e_mail=mail, password=password)
         reg.save()
         return HttpResponseRedirect('/main')
     elif password != repeat_password:
@@ -54,22 +60,38 @@ def signup(request):
 
 def check_login(request):
     login = request.GET.get('login', False)
-    user = User.objects.values_list('user_name', flat=True)  # выборка значений столбца из базы данных
+    user = children.objects.values_list('children_name', flat=True)  # выборка значений столбца из базы данных
     if login not in user:
         return HttpResponse('good', content_type='text/html')
     else:
         return HttpResponse('bad', content_type='text/html')
 
+
 def check_mail(request):
     mail = request.GET.get('mail', False)
-    user_mail = User.objects.values_list('e_mail', flat=True)
-    if mail not in user_mail:
+    children_mail = children.objects.values_list('e_mail', flat=True)
+    if mail not in children_mail:
         return HttpResponse('good', content_type='text/html')
     else:
         return HttpResponse('bad', content_type='text/html')
 
+
 def login_user(request):
     mail = request.POST.get('e_mail_log', False)
     password = request.POST.get('password_log', False)
-    print(mail, password)
-    return HttpResponseRedirect('/main/login/')
+    mass = (children.objects.filter(e_mail=mail).value())
+    pas = (list((mass[0]).values()))[4]
+    login = (list((mass[0]).values()))[2]
+    if pas == password:
+        print(login,pas)
+        user = auth.authenticate(username=login, password=pas)
+        print(user)
+        if user is not None:
+            print('Авторизация прошла')
+            auth.login(request,user)
+            return HttpResponseRedirect('/main/')
+        else:
+            print('сработало иначе')
+            return HttpResponseRedirect('/main/login/')
+    else:
+        return HttpResponseRedirect('/main/login/')

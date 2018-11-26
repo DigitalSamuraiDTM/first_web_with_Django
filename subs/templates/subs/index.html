@@ -13,7 +13,7 @@
             <input type="button" value="Начать!" onclick=to_start_filips()>
         </form>
 
-    {% if  is_authenticated %}
+    {% if   is_authenticated %}
         <input type="button" value="На регистрацию" onclick=to_register_page() >
     {% else %}
         <input type="button" value="Логин" onclick=to_login_page()>

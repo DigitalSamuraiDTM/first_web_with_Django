@@ -363,7 +363,7 @@
     top: 8px;
 }
 
-#submit_button, #submit_button_log{
+#submit_button{
 
     height: 60px;
     width: 200px;
@@ -380,11 +380,26 @@
     margin-right: 50%;
     transform: translate(-50%,-50%);
 }
-#submit_button,#submit_button_log:hover{
+#submit_button:hover{
     background: burlywood;
 }
 
 #submit_button_log{
+    height: 60px;
+    width: 200px;
+    border: 1px solid burlywood;
+    background: wheat;
+    border-radius: 15px;
+    outline: none;
+    -webkit-transition: 0.1s;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    left:50%;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
     top: 300px;
 }
-
+#submit_button_log:hover{
+    background: burlywood;
+}

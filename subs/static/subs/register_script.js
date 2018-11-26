@@ -1,6 +1,6 @@
-var good_login = false, good_mail = false, good_school = false, good_password = false, good_repeat_password = false;
-var repeat_password_val='', password_val='', username='', school='', email='';
-
+var good_login = false, good_mail = false, good_school = false, good_password = false, good_repeat_password = false,
+ repeat_password_val='', password_val='', username='', school='',
+ good_log_mail = false, good_log_password = false,  log_password = '';
 
 function check_name(){
     username = document.getElementById('user_login').value;
@@ -35,7 +35,7 @@ function check_name(){
 }
 
 $(document).ready(function () {
-    $('#e_mail').keyup(function () {
+    $('#e_mail').change(function () {
         if ($(this).val() != '') {
             var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
             if (pattern.test($(this).val())) {
@@ -129,5 +129,45 @@ function check_submit() {
     } else{
         alert('Вы что-то пропустили');
         return false;
+    }
+}
+
+function submit_login() {
+    $(document).find('#e_mail_log').change();
+    if (good_log_mail==true && good_log_password==true){
+        return true;
+    } else{
+        alert('Что-то пошло не так. Проверьте вводимые поля');
+        return false;
+    }
+
+}
+
+$(document).ready(function () {
+    $('#e_mail_log').change(function () {
+        if ($(this).val() != '') {
+            var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+            if (pattern.test($(this).val())) {
+                $(this).css({'border-color':'lightgreen'});
+                good_log_mail = true;
+            } else {
+                $(this).css({'border': '2px solid #ff0000'});
+                good_log_mail = false;
+            }
+        } else {
+            $(this).css({'border': '2px solid #ff0000'});
+            good_log_mail = false;
+        }
+    });
+});
+
+function check_log_pas() {
+    log_password = document.getElementById('password_log').value;
+    if (log_password.length == 0) {
+        good_log_password = false;
+        $('#password_log').css('border-color' , 'red');
+    } else{
+        $('#password_log').css('border-color' , 'lightgreen');
+        good_log_password = true;
     }
 }
