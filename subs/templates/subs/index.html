@@ -6,14 +6,17 @@
     </head>
 
     <body>
-
+    <p>{{ username }} - это вы</p>
+    {% if username %}
+        <p>ВЫ вошли</p>
+    {% endif %}
             <p id="nice">Это теcт Филлипса!</p>
             <input id="plus_one" type="button" value="+1" onclick=plus_one()>
         <form id="button_to_start">
             <input type="button" value="Начать!" onclick=to_start_filips()>
         </form>
 
-    {% if   is_authenticated %}
+    {% if   username %}
         <input type="button" value="На регистрацию" onclick=to_register_page() >
     {% else %}
         <input type="button" value="Логин" onclick=to_login_page()>

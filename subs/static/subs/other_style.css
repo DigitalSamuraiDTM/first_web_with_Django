@@ -294,7 +294,7 @@
     border: 1px;
 }
 
-#user_login, #e_mail, #input_school, #password, #repeat_password, #e_mail_log, #password_log{
+#user_login, #e_mail, #input_Fname,#input_Lname, #password, #repeat_password, #login_log, #password_log{
     position: relative;
     height: 30px;
     width: 250px;
@@ -305,6 +305,9 @@
     font-size: 17px;
 }
 
+#input_Fname{
+    bottom: 10px;
+}
 #password_log{
     top: 15px;
 }
@@ -334,7 +337,7 @@
 #check_input_register{
     position: absolute;
     left:76%;
-    top: 227px;
+    top: 225px;
     margin-right: 50%;
     transform: translate(-50%,-50%);
     width: 400px;
@@ -344,23 +347,26 @@
 
 #true_login{
     position: absolute;
-    top: 48px;
+    top: 80px;
 }
 #true_mail{
     position: absolute;
-    top: 88px;
+    top: 120px;
 }
 #true_password{
-    top: 129px;
+    top: 160px;
     position: absolute;
 }
 #true_repeat_password{
     position: absolute;
-    top: 169px;
+    top: 200px;
 }
-#true_school{
+#true_Lname{
     position: absolute;
-    top: 8px;
+    top: 40px;
+}
+#true_Fname{
+    bottom: 1px;
 }
 
 #submit_button{
