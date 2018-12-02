@@ -6,20 +6,26 @@
     </head>
 
     <body>
-    <p>{{ username }} - это вы</p>
-    {% if username %}
+    <p>{{ user }} - это вы</p>
+    {% if user.is_authenticated %}
         <p>ВЫ вошли</p>
     {% endif %}
             <p id="nice">Это теcт Филлипса!</p>
-            <input id="plus_one" type="button" value="+1" onclick=plus_one()>
         <form id="button_to_start">
             <input type="button" value="Начать!" onclick=to_start_filips()>
         </form>
 
-    {% if   username %}
-        <input type="button" value="На регистрацию" onclick=to_register_page() >
-    {% else %}
+    {% if not user.is_authenticated %}
         <input type="button" value="Логин" onclick=to_login_page()>
+
+    {% else %}
+    <form method="post" action=" {% url "logout" %}">
+        {% csrf_token %}
+        <input type="submit" value="Выйти">
+    </form>
     {% endif %}
+
+<input type="button" value="На регистрацию" onclick=to_register_page() >
+
     </body>
 </html>

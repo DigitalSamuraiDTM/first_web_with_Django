@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 
 
+
 def detail(request, a):
     html = 'subs/html_test/' + str(a) + '_quest.html'
     return render(request, html)
@@ -82,7 +83,11 @@ def login_user(request):
     if user is not None:
         auth.login(request, user)
         print(user)
-        return HttpResponseRedirect('/main/')
+        return HttpResponseRedirect('/main/', request)
     else:
         print('сработало иначе')
-        return HttpResponseRedirect('/main/login/')
+        return HttpResponseRedirect('/main/login/', request)
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/main/', request)
