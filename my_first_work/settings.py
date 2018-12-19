@@ -24,9 +24,9 @@ SECRET_KEY = '^vbn=a@s&qrllcwp1h0cdv3tvk1xm8z!m8!*cvylz$a00($s25'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = [
-    'ce45aed3.ngrok.io',
-    '127.0.0.1'
+    "127.0.0.1",
 ]
 
 

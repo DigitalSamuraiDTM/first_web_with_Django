@@ -6,6 +6,16 @@
     </head>
 
     <body>
+    <header id="top_bar">
+        <div>
+            <div style="display: inline-block">
+                1
+            </div>
+            <div style="display: inline-block">
+                2
+            </div>
+        </div>
+    </header>
     <p>{{ user }} - это вы</p>
     {% if user.is_authenticated %}
         <p>ВЫ вошли</p>
@@ -17,7 +27,7 @@
 
     {% if not user.is_authenticated %}
         <input type="button" value="Логин" onclick=to_login_page()>
-
+        <input type="button" value="На регистрацию" onclick=to_register_page() >
     {% else %}
     <form method="post" action=" {% url "logout" %}">
         {% csrf_token %}
@@ -25,7 +35,6 @@
     </form>
     {% endif %}
 
-<input type="button" value="На регистрацию" onclick=to_register_page() >
 
     </body>
 </html>

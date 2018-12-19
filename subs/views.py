@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
 
+
+def view_404(request):
+    return render(request, 'subs/404NotFound.html')
+
+def view_500(request):
+    return render(request,'subs/500serverError.html')
 
 def detail(request, a):
     html = 'subs/html_test/' + str(a) + '_quest.html'
@@ -50,8 +56,7 @@ def signup(request):
     repeat_password = request.POST.get("repeat_password", False)
 
     if password == repeat_password:
-        registr = User.objects.create_user(email=mail, username=login, password=password, first_name=Fname,
-                                           last_name=Lname)
+        registr = User.objects.create_user(email=mail, username=login, password=password, first_name=Fname, last_name=Lname)
         registr.save()
         return HttpResponseRedirect('/main')
     elif password != repeat_password:
@@ -85,8 +90,8 @@ def login_user(request):
         print(user)
         return HttpResponseRedirect('/main/', request)
     else:
-        print('сработало иначе')
-        return HttpResponseRedirect('/main/login/', request)
+        login_error = {'login_error': 'Такого пользователя не существует'}
+        return render_to_response('subs/login.html', login_error)
 
 def logout(request):
     auth.logout(request)

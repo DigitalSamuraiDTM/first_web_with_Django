@@ -20,6 +20,9 @@
             <input type="password" name="password_log" id="password_log"  placeholder=" пароль" aria-describedby="basic-addon1" onchange=check_log_pas()>
 
             </section>
+            {% if login_error %}
+                <p id="error_login">{{ login_error }}</p>
+            {% endif %}
                 <section>
                     <input type="submit" value="Войти" id="submit_button_log">
                 </section>

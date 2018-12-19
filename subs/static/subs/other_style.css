@@ -1,4 +1,14 @@
 
+#top_bar{
+    position: absolute;
+    width: 100%;
+    background-color: wheat;
+    height: 35px;
+    top: 0px;
+    left: 0px;
+
+}
+
 #rez{
     transition: opacity 1s;
 }
@@ -404,7 +414,7 @@
     left:50%;
     margin-right: 50%;
     transform: translate(-50%,-50%);
-    top: 300px;
+    top: 350px;
 }
 #submit_button_log:hover{
     background: burlywood;
@@ -421,4 +431,16 @@
     text-align: center;
     font-size: 24px;
     font-family: "Lato", sans-serif;
+}
+#error_login{
+    width: 700px;
+    position: absolute;
+    left:50%;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    top: 232px;
+    text-align: center;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    color: orangered;
 }

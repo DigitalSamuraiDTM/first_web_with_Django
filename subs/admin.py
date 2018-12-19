@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Quest, children
+from .models import children
 
 class childrenAdmin(admin.ModelAdmin):
 
