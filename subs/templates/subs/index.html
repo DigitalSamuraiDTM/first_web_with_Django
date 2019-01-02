@@ -8,19 +8,23 @@
     <body>
     <header id="top_bar">
         <div>
-            <div style="display: inline-block">
-                1
+
+        {% if user.is_authenticated  %}
+            <div id="top_bar_user_block">
+
+                <a id="top_bar_user"> <ins>{{ user }}</ins> </a>
+                    <div id="top_bar_block_logout">
+                        <input type="button" value="Выйти" id="top_bar_logout" onclick=logout_user()>
+                    </div>
             </div>
-            <div style="display: inline-block">
-                2
+                 {% else %}
+            <div id="top_bar_anon_block">
+                    <input type="button" id="top_bar_login" value="Войти" onclick=to_login_page()>
+                    <input type="button" id="top_bar_register" value="Регистрация" onclick=to_register_page() >
             </div>
+        {% endif %}
         </div>
     </header>
-    <p>{{ user }} - это вы</p>
-    {% if user.is_authenticated %}
-        <p>ВЫ вошли</p>
-    {% endif %}
-            <p id="nice">Это теcт Филлипса!</p>
         <form id="button_to_start">
             <input type="button" value="Начать!" onclick=to_start_filips()>
         </form>

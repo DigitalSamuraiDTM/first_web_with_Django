@@ -963,5 +963,9 @@ function to_login_page() {
     location.href='/main/login/'
 }
 
+function logout_user() {
+    location.href="logout"
+}
+
 
 

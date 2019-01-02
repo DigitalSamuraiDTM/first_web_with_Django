@@ -6,6 +6,7 @@
     height: 35px;
     top: 0px;
     left: 0px;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);
 
 }
 
@@ -444,3 +445,93 @@
     font-family: "Lato", sans-serif;
     color: orangered;
 }
+
+#top_bar_user_block{
+    height: 35px;
+    width: 170px;
+    display: inline-block;
+    position: relative;
+    left: 83%;
+    text-align: right;
+    font-family: "Lato", sans-serif;
+}
+#top_bar_block_logout{
+    position: absolute;
+    top: 31px;
+    bottom: 0;
+    left: 0;
+    right: 95px;
+    display: none;
+}
+
+#top_bar_user_block:hover #top_bar_block_logout{
+    display: block;
+}
+
+#top_bar_anon_block{
+    display: inline-block;
+    position: relative;
+    left: 81%;
+}
+
+#top_bar_login{
+    position: relative;
+    top: 3px;
+    border: 2px solid burlywood;
+    background: lightyellow;
+    height: 28px;
+    width: 90px;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    border-radius: 11px;
+}
+#top_bar_login:hover{
+    background: lemonchiffon;
+}
+
+#top_bar_register{
+    position: relative;
+    top: 3px;
+    border: 2px solid burlywood;
+    background: lightyellow;
+    height: 28px;
+    width: 120px;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    border-radius: 11px;
+}
+#top_bar_register:hover{
+    background: lemonchiffon;
+}
+
+#top_bar_logout{
+    position: absolute;
+    top: 3px;
+    border: 2px solid wheat;
+    background: lightyellow;
+    height: 28px;
+    width: 120px;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    border-radius: 0px 0px 15px 15px;
+    outline: none;
+    cursor: pointer;
+}
+#top_bar_logout:hover{
+    background-color: lemonchiffon;
+}
+
+#top_bar_user{
+    position: relative;
+    color: dodgerblue;
+    display: inline-block;
+    font-size: 20px;
+    top: 15px;
+}
+

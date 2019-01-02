@@ -90,7 +90,7 @@ def login_user(request):
         print(user)
         return HttpResponseRedirect('/main/', request)
     else:
-        login_error = {'login_error': 'Такого пользователя не существует'}
+        login_error = {'login_error': 'Такого пользователя не существует или ваш пароль неверен'}
         return render_to_response('subs/login.html', login_error)
 
 def logout(request):
