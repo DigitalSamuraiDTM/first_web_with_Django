@@ -448,11 +448,10 @@
 
 #top_bar_user_block{
     height: 35px;
-    width: 170px;
+    width: 100%;
     display: inline-block;
     position: relative;
-    left: 83%;
-    text-align: right;
+    text-align: center;
     font-family: "Lato", sans-serif;
 }
 #top_bar_block_logout{
@@ -461,17 +460,23 @@
     bottom: 0;
     left: 0;
     right: 95px;
-    display: none;
+    display: block;
 }
 
-#top_bar_user_block:hover #top_bar_block_logout{
-    display: block;
+#control_username{
+    display: inline-block;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    text-overflow: ellipsis ;
+    position: relative;
+    left: 8%;
 }
 
 #top_bar_anon_block{
     display: inline-block;
     position: relative;
-    left: 81%;
+    left: 77%;
 }
 
 #top_bar_login{
@@ -510,8 +515,8 @@
     background: lemonchiffon;
 }
 
-#top_bar_logout{
-    position: absolute;
+#top_bar_logout,#top_bar_account, #top_bar_develop,#top_bar_testing,#top_bar_help,#top_bar_help{
+    position: relative;
     top: 3px;
     border: 2px solid wheat;
     background: lightyellow;
@@ -519,19 +524,40 @@
     width: 120px;
     font-family: "Lato", sans-serif;
     font-size: 16px;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
     outline: none;
     cursor: pointer;
 }
+
 #top_bar_logout:hover{
+    background-color: lemonchiffon;
+}
+#top_bar_help:hover{
+    background-color: lemonchiffon;
+}
+#top_bar_account:hover{
+    background-color: lemonchiffon;
+}
+#top_bar_develop:hover{
+    background-color: lemonchiffon;
+}
+#top_bar_testing:hover{
     background-color: lemonchiffon;
 }
 
 #top_bar_user{
     position: relative;
-    color: dodgerblue;
+    color: black;
     display: inline-block;
-    font-size: 20px;
-    top: 15px;
+    font-size: 21px;
+    top: 1px;
+}
+
+#FILLIPS{
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 25px;
+    position: relative;
+    top: 5px;
 }
 
