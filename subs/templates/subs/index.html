@@ -1,5 +1,5 @@
 {% load static %}
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
         <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
@@ -14,10 +14,10 @@
                 <section style="display: inline-block; position: relative; right: 4%">
                     <h1 id="FILLIPS">Филлипс</h1>
                 </section>
-                <input type="button" value="Профиль" id="top_bar_account">
-                <input type="button" value="Тестирование" id="top_bar_testing">
-                <input type="button" value="Помощь" id="top_bar_help">
-                <input type="button" value="О разработке" id="top_bar_develop">
+                <input type="button" value="Профиль" id="top_bar_account" onclick=this_is_work()>
+                <input type="button" value="Тестирование" id="top_bar_testing" onclick=this_is_work()>
+                <input type="button" value="Помощь" id="top_bar_help" onclick=this_is_work()>
+                <input type="button" value="О разработке" id="top_bar_develop" onclick=this_is_work()>
                 <input type="button" value="Выйти" id="top_bar_logout" onclick=logout_user()>
                 <section id="control_username">
                     <a id="top_bar_user"> {{ user }} </a>
@@ -31,19 +31,30 @@
         {% endif %}
         </section>
     </header>
-        <form id="button_to_start">
-            <input type="button" value="Начать!" onclick=to_start_filips()>
-        </form>
+    <section>
+        <h1 style='font-family: "Lato", sans-serif; text-align: center; position: relative; top: 50px;'>Тест уровня школьной тревожноти Филлипса</h1>
+    </section>
+    <article>
+        <section style="width: 200px; height: 200px; border: 2px solid burlywood; position:relative; top: 80px; left: 8%; display: inline-block">
+            <img style="height: 200px; width: 200px;" src="{% static 'subs/images/anonim.png' %}">
+        </section>
+        <section style="display: inline-block;position: relative;width: 800px;height: 300px;font-size: 20px;left: 150px;font-family: 'Lato', sans-serif;top: 60px;">
+            <p>Этот тест был разработан Б.Н.Филлипсом (Beeman N. Phillips) в 1970-х годах.
+                К сожалению информации о создателе не сохранилось и на данный момент он является неизвестной личностью.</p>
+            <p>Тест позволяет определить общий уровень школьной тревожности, а также изучить характер переживания тревожности, связанной с различными областями
+            школьной жизни. Методика предназначение для работы с учениками младшего и среднего школьно возраста.</p>
+        </section>
+        <section style="font-size: 20px;font-family: 'Lato', sans-serif;position: relative;width: 940px;text-align: center;left: 13%;">
+            <p> Данный сайт предлагает две формы прохождения теста: авторизированному пользователю и пользователю без авторизации.
+                Разница прохождения заключается в том, что авторизированный пользователь получает более точный анализ с описанием каждого фактора, в отличии от
+                пользователя без авторизации, который получает лишь общие результаты. Для того, чтобы начать прохождение без авторизации нажмите на кнопку ниже или нажмите
+                <a href="FilipsTest/start">здесь</a>
+            </p>
+        </section>
+        <input id="button_to_start" type="button" value="Начать!" onclick=to_start_filips()>
+    </article>
 
-    {% if not user.is_authenticated %}
-        <input type="button" value="Логин" onclick=to_login_page()>
-        <input type="button" value="На регистрацию" onclick=to_register_page() >
-    {% else %}
-    <form method="post" action=" {% url "logout" %}">
-        {% csrf_token %}
-        <input type="submit" value="Выйти">
-    </form>
-    {% endif %}
+
 
 
     </body>

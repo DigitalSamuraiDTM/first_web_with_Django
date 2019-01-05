@@ -967,5 +967,10 @@ function logout_user() {
     location.href="logout"
 }
 
+function go_back() {
+    location.href="/main"
+}
 
-
+function this_is_work() {
+    location.href='work'
+}

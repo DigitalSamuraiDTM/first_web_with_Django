@@ -1,0 +1,18 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
+    <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>EMPTY</title>
+</head>
+<body>
+    <img id="work" src="{% static "subs/images/working.png" %}">
+    <h1 style="text-align: center">Стой! Куда идёшь? Не видишь здесь идёт работа? Пожалуйста, не мешай людям работать и вернись назад!</h1>
+    <input type="button" value="Вернуться назад" style="position: relative;
+    left: 50%;
+    top: 180px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%)" onclick=go_back()>
+</body>
+</html>

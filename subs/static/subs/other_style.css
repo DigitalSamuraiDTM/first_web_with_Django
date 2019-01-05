@@ -14,12 +14,6 @@
     transition: opacity 1s;
 }
 
-#button_to_start{
-    position: absolute;
-    top: 400px;
-    left: 45%;
-}
-
 #test_filips{
     width: 940px;
     height: 270px;
@@ -561,3 +555,31 @@
     top: 5px;
 }
 
+#work{
+    position: relative;
+    left:50%;
+    top: 180px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#button_to_start{
+    position: relative;
+    left:50%;
+    top: 180px;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    height: 55px;
+    width: 150px;
+    background: wheat;
+    outline: none;
+    border: 1px solid burlywood;
+    border-radius: 15px;
+    -webkit-transition: 0.1s;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+}
+#button_to_start:hover{
+    background: burlywood;
+}

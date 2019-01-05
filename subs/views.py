@@ -3,13 +3,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
-
-
 def view_404(request):
     return render(request, 'subs/404NotFound.html')
 
+
 def view_500(request):
     return render(request,'subs/500serverError.html')
+
+
+
 
 def detail(request, a):
     html = 'subs/html_test/' + str(a) + '_quest.html'
@@ -93,6 +95,11 @@ def login_user(request):
         login_error = {'login_error': 'Такого пользователя не существует или ваш пароль неверен'}
         return render_to_response('subs/login.html', login_error)
 
+
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/main/', request)
+
+
+def work(request):
+    return render(request, 'subs/work.html')
