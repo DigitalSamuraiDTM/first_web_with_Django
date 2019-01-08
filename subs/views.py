@@ -13,11 +13,6 @@ def view_500(request):
 
 
 
-def detail(request, a):
-    html = 'subs/html_test/' + str(a) + '_quest.html'
-    return render(request, html)
-
-
 def register(request):
     return render(request, 'subs/register.html')
 
@@ -86,14 +81,13 @@ def check_mail(request):
 def login_user(request):
     login = request.POST.get('login_log', False)
     password = request.POST.get('password_log', False)
-    user = auth.authenticate(username=login, password=password)
-    if user is not None:
-        auth.login(request, user)
-        print(user)
+    user = auth.authenticate(username=login, password=password) #проверка существования юзера с логином и паролем
+    if user is not None: #если юзер существует
+        auth.login(request, user) #логин
         return HttpResponseRedirect('/main/', request)
     else:
-        login_error = {'login_error': 'Такого пользователя не существует или ваш пароль неверен'}
-        return render_to_response('subs/login.html', login_error)
+        login_error = {'login_error': 'Такого пользователя не существует или ваш пароль неверен'} #иначе выводим ошибку
+        return render_to_response('subs/login.html', login_error) #отправляем
 
 
 def logout(request):
