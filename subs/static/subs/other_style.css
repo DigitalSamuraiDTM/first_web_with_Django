@@ -1,6 +1,6 @@
 
 #top_bar{
-    position: absolute;
+    position: static;
     width: 100%;
     background-color: wheat;
     height: 35px;
@@ -464,7 +464,7 @@
     text-align: center;
     text-overflow: ellipsis ;
     position: relative;
-    left: 8%;
+    left: 3%;
 }
 
 #top_bar_anon_block{
@@ -565,9 +565,9 @@
 
 #button_to_start{
     position: relative;
-    left:50%;
     top: 180px;
-    margin-right: 50%;
+    left:50%;
+    margin-right: 88%;
     transform: translate(-50%,-50%);
     height: 55px;
     width: 150px;

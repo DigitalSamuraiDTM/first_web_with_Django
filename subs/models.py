@@ -19,3 +19,15 @@ class children(models.Model):
         verbose_name = 'User' #имя пользователя в ед. числе
         verbose_name_plural = 'Users' # во мн. числе
 
+class Users_data_question(models.Model):
+    login = models.CharField(max_length=100)
+    reiteration_test = models.IntegerField()
+    true_choice = models.IntegerField()
+    bad_choice = models.IntegerField()
+
+    def __str__(self):
+        return '%s, %s, %s, %s' % (self.login,self.reiteration_test, self.true_choice, self.bad_choice)
+
+    class Meta:
+        verbose_name = 'Users_data_question'
+        verbose_name_plural = 'Users_data_questions'

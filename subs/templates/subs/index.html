@@ -7,7 +7,6 @@
 
     <body>
     <header id="top_bar">
-
         <section>
         {% if user.is_authenticated  %}
             <section id="top_bar_user_block">
@@ -32,22 +31,22 @@
         </section>
     </header>
     <section>
-        <h1 style='font-family: "Lato", sans-serif; text-align: center; position: relative; top: 50px;'>Тест уровня школьной тревожноти Филлипса</h1>
+        <h1 style='font-family: "Lato", sans-serif; text-align: center; position: relative; top: 50px;'>Тест уровня школьной тревожности Филлипса</h1>
     </section>
-    <article>
-        <section style="width: 200px; height: 200px; border: 2px solid burlywood; position:relative; top: 80px; left: 8%; display: inline-block">
+    <article style="text-align: center">
+        <section style="width: 200px; height: 200px; border: 2px solid burlywood; position:relative; top: 80px; left: 0%; display: inline-block">
             <img style="height: 200px; width: 200px;" src="{% static 'subs/images/anonim.png' %}">
         </section>
-        <section style="display: inline-block;position: relative;width: 800px;height: 300px;font-size: 20px;left: 150px;font-family: 'Lato', sans-serif;top: 60px;">
+        <section style="display: inline-block;position: relative;width: 800px;height: 300px;font-size: 20px;left: 0%;font-family: 'Lato', sans-serif;top: 60px;">
             <p>Этот тест был разработан Б.Н.Филлипсом (Beeman N. Phillips) в 1970-х годах.
                 К сожалению информации о создателе не сохранилось и на данный момент он является неизвестной личностью.</p>
             <p>Тест позволяет определить общий уровень школьной тревожности, а также изучить характер переживания тревожности, связанной с различными областями
-            школьной жизни. Методика предназначение для работы с учениками младшего и среднего школьно возраста.</p>
+            школьной жизни. Методика предназначения для работы с учениками младшего и среднего школьного возраста.</p>
         </section>
-        <section style="font-size: 20px;font-family: 'Lato', sans-serif;position: relative;width: 940px;text-align: center;left: 13%;">
+        <section style="font-size: 20px;font-family: 'Lato', sans-serif;position: relative;width: 890px;text-align: center;left:50%;margin-right: 50%;transform: translate(-50%,-50%); top: 60px">
             <p> Данный сайт предлагает две формы прохождения теста: авторизированному пользователю и пользователю без авторизации.
                 Разница прохождения заключается в том, что авторизированный пользователь получает более точный анализ с описанием каждого фактора, в отличии от
-                пользователя без авторизации, который получает лишь общие результаты. Для того, чтобы начать прохождение без авторизации нажмите на кнопку ниже или нажмите
+                пользователя без авторизации, который получает лишь общие результаты. Пройти регистрацию можете нажав <a href="register/">сюда</a> Для того, чтобы начать прохождение без авторизации нажмите на кнопку ниже или нажмите
                 <a href="FilipsTest/start">здесь</a>
             </p>
         </section>

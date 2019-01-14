@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from subs.models import Users_data_question
 
 def view_404(request):
     return render(request, 'subs/404NotFound.html')
@@ -54,6 +55,8 @@ def signup(request):
 
     if password == repeat_password:
         registr = User.objects.create_user(email=mail, username=login, password=password, first_name=Fname, last_name=Lname)
+        registr.save()
+        registr = Users_data_question(login=login, true_choice=0, bad_choice=0, reiteration_test=0)
         registr.save()
         return HttpResponseRedirect('/main')
     elif password != repeat_password:

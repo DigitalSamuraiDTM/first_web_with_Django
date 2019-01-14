@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import children
+from .models import Users_data_question, children
 
 class childrenAdmin(admin.ModelAdmin):
 
@@ -13,7 +13,13 @@ class childrenAdmin(admin.ModelAdmin):
     class Meta:
         model = children #берет данные из модели  User. При регистрации будет регаться будет класс созданный на основе модели User
 
+class UserData(admin.ModelAdmin):
+    list_display = ['login','reiteration_test','true_choice', 'bad_choice']
+    list_filter = ['login']
+    search_fields = ['login']
+    class Meta:
+        model = Users_data_question
 
 
-
-admin.site.register(children, childrenAdmin)#регистрация модели User и ему принадлежащего UserAdmin в админке
+admin.site.register(children, childrenAdmin)
+admin.site.register(Users_data_question, UserData)#регистрация модели User и ему принадлежащего UserAdmin в админке
