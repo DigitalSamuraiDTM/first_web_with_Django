@@ -12,8 +12,30 @@
         <h1  id="filip_number_test">Вопрос 1/58</h1>
         <p id="filip_text_test">Трудно ли тебе держаться на одном уровне со всем классом, быть как все?</p>
         <section id="button_filips_div">
-            <input id="button_test_filips_yes" type="button" value="Да" onclick=on_yes_button()>
-            <input id="button_test_filips_no" type="button" value="Нет" onclick=on_no_button()>
+            {% if user.is_authenticated %}
+                <form onsubmit="return save_additional_data()" method="post" action="{% url "save_additional_data" %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="login" value="{{ user }}">
+                    <input type="number" name="true_choice" aria-describedby="basic-addon1" id="true_choice" style="display: none">
+                    <input type="number" name="bad_choice" aria-describedby="basic-addon1" id="bad_choice" style="display: none">
+
+                    <input type="number" name="main_choice_quest" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="anxiety_in_school" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="social_fear" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="frustration" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="fear_self_expressions" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="fear_situation_to_check" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="fear_not_waiting_social" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="low_resistance_stress" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="number" name="problems_and_fears_with_teachers" aria-describedby="basic-addon1"  style="display: none">
+
+                    <input id="button_test_filips_yes" type="submit" value="Да" onclick=on_yes_button()>
+                    <input id="button_test_filips_no" type="submit" value="Нет" onclick=on_no_button()>
+                </form>
+        {% else %}
+                <input id="button_test_filips_yes" type="button" value="Да :)" onclick=on_yes_button()>
+            <input id="button_test_filips_no" type="button" value="Нет >:(" onclick=on_no_button()>
+        {% endif %}
             <div id="filips_progress_border">
                 <div id="filips_progress_bar">
                     <div id="percent_filips">0%</div>

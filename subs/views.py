@@ -100,3 +100,21 @@ def logout(request):
 
 def work(request):
     return render(request, 'subs/work.html')
+
+
+def save_additional_data(request):
+    true_choice = int(request.POST.get('true_choice', False))
+    bad_choice = int(request.POST.get('bad_choice', False))
+    login = request.POST.get('login', False) #пример изменений данных в бд
+    additional = Users_data_question.objects.get(login=login)  #выбираем объект с именем login
+    additional.bad_choice+= bad_choice #производим изменения с этими полями
+    additional.true_choice += true_choice
+    additional.reiteration_test +=1
+    additional.save() #сохраняем изменения sql запросом
+
+
+    return rezults(request)
+
+
+def profile(request):
+    return render(request, 'subs/profile.html')

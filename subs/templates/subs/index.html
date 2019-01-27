@@ -3,6 +3,7 @@
     <head>
         <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
         <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
+        <title>Филлипс</title>
     </head>
 
     <body>
@@ -13,7 +14,7 @@
                 <section style="display: inline-block; position: relative; right: 4%">
                     <h1 id="FILLIPS">Филлипс</h1>
                 </section>
-                <input type="button" value="Профиль" id="top_bar_account" onclick=this_is_work()>
+                <input type="button" value="Профиль" id="top_bar_account" onclick=go_to_profile()>
                 <input type="button" value="Тестирование" id="top_bar_testing" onclick=this_is_work()>
                 <input type="button" value="Помощь" id="top_bar_help" onclick=this_is_work()>
                 <input type="button" value="О разработке" id="top_bar_develop" onclick=this_is_work()>

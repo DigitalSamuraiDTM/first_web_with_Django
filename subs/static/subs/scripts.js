@@ -939,6 +939,8 @@ function test_filips() {
             else if(no==true){
                 main_choice_quest+=1;
             }
+            document.getElementById('true_choice').value=main_choice_quest;
+            document.getElementById('bad_choice').value=58-main_choice_quest;
             sessionStorage.setItem('main_choice_quest', main_choice_quest);
             sessionStorage.setItem('fear_not_waiting_social', fear_not_waiting_social);
             sessionStorage.setItem('social_fear',social_fear);
@@ -948,8 +950,6 @@ function test_filips() {
             sessionStorage.setItem('fear_self_expressions', fear_self_expressions);
             sessionStorage.setItem('fear_situation_to_check', fear_situation_to_check);
             sessionStorage.setItem('anxiety_in_school', anxiety_in_school);
-            number_quest = 1;
-            location.href='/main/FilipsTest/results/';
             break;
     }
 
@@ -973,4 +973,18 @@ function go_back() {
 
 function this_is_work() {
     location.href='work'
+}
+
+function save_additional_data() {
+    if (number_quest==58){
+        number_quest = 0;
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function go_to_profile() {
+    location.href='profile'
 }

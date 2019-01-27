@@ -26,6 +26,10 @@ urlpatterns = [
 
     path('logout', views.logout, name='logout'),
 
-    path('work', views.work, name='work')
+    path('work', views.work, name='work'),
+
+    path('save_additional_data',views.save_additional_data, name='save_additional_data'),
+
+    path('profile', views.profile, name='profile')
 
 ]
