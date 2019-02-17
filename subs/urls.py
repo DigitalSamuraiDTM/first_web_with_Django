@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='subs'),
 
-    path('FilipsTest/start/', views.start_quest, name='start'),
+    path('start/', views.start_quest, name='start'),
 
     path('register/', views.register, name='register'),
 
@@ -30,6 +30,14 @@ urlpatterns = [
 
     path('save_additional_data',views.save_additional_data, name='save_additional_data'),
 
-    path('profile', views.profile, name='profile')
+    path('profile', views.profile, name='profile'),
+
+    path('change_data', views.change_data, name='change_data'),
+
+    path('old_results', views.old_results, name='old_results'),
+
+    path('rechange',views.rechange, name='rechange'),
+
+    path('develop', views.develop, name='develop')
 
 ]

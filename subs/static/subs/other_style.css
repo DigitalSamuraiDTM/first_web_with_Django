@@ -22,6 +22,7 @@
     margin-top: 170px;
     padding: 10px;
     border: outset wheat;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 7px 7px 6px rgba(59,64,69,0.1);
 }
 
 #button_test_filips_yes{
@@ -93,6 +94,7 @@
     margin: auto;
     margin-top: 170px;
     border: outset wheat;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 7px 7px 6px rgba(59,64,69,0.1);
 }
 
 #start_test_text{
@@ -299,7 +301,7 @@
     border: 1px;
 }
 
-#user_login, #e_mail, #input_Fname,#input_Lname, #password, #repeat_password, #login_log, #password_log{
+#user_login, #e_mail, #input_Fname,#input_Lname, #password, #repeat_password, #login_log,#new_password, #repeat_new_password, #old_password , #password_log{
     position: relative;
     height: 30px;
     width: 250px;
@@ -582,4 +584,106 @@
 }
 #button_to_start:hover{
     background: burlywood;
+}
+
+#profile_content{
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    left:50%;margin-right: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    top:400px;
+    border: 1px solid burlywood;
+    border-radius: 11px;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 7px 7px 6px rgba(59,64,69,0.1);
+}
+
+#change_data{
+    position: absolute;
+    height: 700px;
+    width: 800px;
+    border: 1px solid burlywood;
+    left: 50%;
+    margin-right: 88%;
+    transform: translate(-50%,-50%);
+    top: 400px;
+    border-radius: 55px;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 7px 7px 6px rgba(59,64,69,0.1);
+    text-align: center;
+    background: white;
+    font-family: 'Lato', sans-serif;
+}
+
+#old_password, #new_password, #repeat_new_password{
+    left:40%;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+}
+
+#old_password{
+    top: 50px;
+}
+
+#new_password{
+    top: 70px;
+}
+
+#repeat_new_password{
+    top: 90px;
+}
+
+#back_to_profile{
+    height: 60px;
+    width: 200px;
+    border: 1px solid burlywood;
+    background: wheat;
+    border-radius: 15px;
+    outline: none;
+    -webkit-transition: 0.1s;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    left:50%;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 450px;
+}
+#back_to_profile:hover{
+    background: burlywood;
+}
+
+#submit_change_data{
+    height: 60px;
+    width: 200px;
+    border: 1px solid burlywood;
+    background: wheat;
+    border-radius: 15px;
+    outline: none;
+    -webkit-transition: 0.1s;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    left:50%;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 300px;
+}
+#submit_change_data:hover{
+    background: burlywood;
+}
+
+#error_password{
+    position: relative;
+    top: 180px;
+    color: red;
+}
+#good_developer{
+    left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+    top: 300px;
+    width: 1000px;
+    border: 2px solid burlywood;
 }

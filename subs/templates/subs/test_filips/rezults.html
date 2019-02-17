@@ -4,11 +4,15 @@
 <head>
     <script type="text/javascript" src = "{% static 'subs/scripts.js' %}"></script>
     <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static "subs/images/favicon.ico" %}">
     <meta charset="UTF-8">
     <title>Результаты прохождения теста</title>
 </head>
 <body style="height: 2300px">
      <h1 id="title_filips3">Тест школьной тревожности Филлипса</h1>
+     {% if FEAR %}
+         <h1>ЫААААААААААААААААААААААААААААААА</h1>
+     {% endif %}
      <article>
         <table   border="5"  id="table">
 

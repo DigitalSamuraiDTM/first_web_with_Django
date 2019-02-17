@@ -1,10 +1,12 @@
 {% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" />
     <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
-    <title>Профиль</title>
+    <link rel="shortcut icon" type="image/png" href="{% static "subs/images/favicon.ico" %}">
+    <title>Профиль...</title>
 </head>
 <body>
         <header id="top_bar">
@@ -12,12 +14,12 @@
         {% if user.is_authenticated  %}
             <section id="top_bar_user_block">
                 <section style="display: inline-block; position: relative; right: 4%">
-                    <h1 id="FILLIPS">Профиль</h1>
+                    <h1 id="FILLIPS">Филлипс</h1>
                 </section>
                 <input type="button" value="Начало" id="top_bar_account" onclick=go_back()>
-                <input type="button" value="Тестирование" id="top_bar_testing" onclick=this_is_work()>
+                <input type="button" value="Тестирование" id="top_bar_testing" onclick=to_start_filips()>
                 <input type="button" value="Помощь" id="top_bar_help" onclick=this_is_work()>
-                <input type="button" value="О разработке" id="top_bar_develop" onclick=this_is_work()>
+                <input type="button" value="О разработке" id="top_bar_develop" onclick=to_develop()>
                 <input type="button" value="Выйти" id="top_bar_logout" onclick=logout_user()>
                 <section id="control_username">
                     <a id="top_bar_user"> {{ user }} </a>
@@ -31,8 +33,51 @@
         {% endif %}
         </section>
     </header>
-    <article>
-
+        {% if user.is_authenticated %}
+            <h1 style="text-align: center; font-family: 'Lato', sans-serif">{{ first_name }} {{ last_name }}</h1>
+            <article id="profile_content" >
+            <section style="">
+                <section>
+                <h2 style="position: relative; left: 5px">Данные</h2>
+                <ul  style="font-size: 18px">
+                    <li>Логин: {{ username }}</li>
+                 <li>Имя: {{ first_name }}</li>
+                    <li>Фамилия :{{ last_name }}</li>
+               </ul>
+                    <!-- <a href="change_data">Изменить пароль...</a> -->
+                </section>
+               <section>
+                  <h2 style="position: relative; left: 5px">Общая статистика</h2>
+                   <ul style="font-size: 18px">
+                       <li>Всего циклов прохождения: {{ reiterations }}</li>
+                       <li>Всего правильных ответов: {{ true_choice }}</li>
+                      <li>Всего неправильных ответов: {{ bad_choice }}</li>
+                  </ul>
+            </section>
+        <section>
+            <h2 style="position: relative; left: 5px">Последнее прохождение</h2>
+            <ul style="font-size: 18px">
+                <li>Основное прохождение теста: {{ main_choice_quest }}%</li>
+                <li>Общая тревожность в школе: {{ anxiety_in_school }}%</li>
+                <li>Переживание социального стресса: {{ social_fear }}%</li>
+                <li>Фрустрация потребности в достижении успеха: {{ frustration }}%</li>
+                <li>Страх несоответствовать ожиданиям окружающих:{{ fear_not_waiting_social }}%</li>
+                <li>Страх самовыражения: {{ fear_self_expressions }}%</li>
+                <li>Страх ситуации проверки знаний: {{ fear_situation_to_check }}%</li>
+                <li>Низкая физиологическая сопротивляемость стрессу: {{ low_resistance_stress }}%</li>
+                <li>Проблемы и страхи в отношениях с учителями: {{ problems_and_fears_with_teachers }}%</li>
+            </ul>
+        </section>
+        </section>
     </article>
+    {% else %}
+    <article>
+    <section >
+        <img src="{% static 'subs/images/Save_me.jpg' %}" id="work"  style="top: 270px; width: 500px; height: 500px">
+    </section>
+        <h1 style="text-align: center">А как вы тут оказались? Ну ка кышь отсюда.</h1>
+    </article>
+    {% endif %}
 </body>
 </html>
+{% block change %}{% endblock %}

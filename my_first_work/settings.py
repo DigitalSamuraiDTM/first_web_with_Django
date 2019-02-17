@@ -14,7 +14,13 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
+MEDIA_ROOT = PROJECT_PATH+'/media'
+
+TEMPLATE_DIRS = [
+    PROJECT_PATH+'/templates/',
+]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -22,12 +28,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^vbn=a@s&qrllcwp1h0cdv3tvk1xm8z!m8!*cvylz$a00($s25'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =True
 
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "e182c1e3.ngrok.io",
+    '127.0.0.1',
+    "6878ce53.ngrok.io",
 ]
 
 

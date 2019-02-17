@@ -3,6 +3,7 @@
 <head>
     <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
     <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static "subs/images/favicon.ico" %}">
     <title>Тест Филлипса.</title>
 </head>
 
@@ -15,26 +16,27 @@
             {% if user.is_authenticated %}
                 <form onsubmit="return save_additional_data()" method="post" action="{% url "save_additional_data" %}">
                     {% csrf_token %}
-                    <input type="hidden" name="login" value="{{ user }}">
-                    <input type="number" name="true_choice" aria-describedby="basic-addon1" id="true_choice" style="display: none">
-                    <input type="number" name="bad_choice" aria-describedby="basic-addon1" id="bad_choice" style="display: none">
+                    <input type="hidden" name="login" value="{{ user }}" id="username_main_login">
+                    <input type="hidden" value=0 name="true_choice" aria-describedby="basic-addon1" id="true_choice" style="display: none">
+                    <input type="hidden" value=0 name="bad_choice" aria-describedby="basic-addon1" id="bad_choice" style="display: none">
 
-                    <input type="number" name="main_choice_quest" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="anxiety_in_school" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="social_fear" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="frustration" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="fear_self_expressions" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="fear_situation_to_check" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="fear_not_waiting_social" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="low_resistance_stress" aria-describedby="basic-addon1"  style="display: none">
-                    <input type="number" name="problems_and_fears_with_teachers" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="main_choice_quest" id="main_choice_quest" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="anxiety_in_school" id="anxiety_in_school" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="social_fear" id="social_fear" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="frustration" id="frustration" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="fear_self_expressions" id="fear_self_expressions" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="fear_situation_to_check" id="fear_situation_to_check" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="fear_not_waiting_social" id="fear_not_waiting_social" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="low_resistance_stress" id="low_resistance_stress" aria-describedby="basic-addon1"  style="display: none">
+                    <input type="hidden" value=0 name="problems_and_fears_with_teachers" id="problems_and_fears_with_teachers" aria-describedby="basic-addon1"  style="display: none">
 
                     <input id="button_test_filips_yes" type="submit" value="Да" onclick=on_yes_button()>
                     <input id="button_test_filips_no" type="submit" value="Нет" onclick=on_no_button()>
                 </form>
         {% else %}
+                <input type="hidden" name="login" value="0" id="username_main_login">
                 <input id="button_test_filips_yes" type="button" value="Да :)" onclick=on_yes_button()>
-            <input id="button_test_filips_no" type="button" value="Нет >:(" onclick=on_no_button()>
+            <input id="button_test_filips_no" type="button" value="Нет :(" onclick=on_no_button()>
         {% endif %}
             <div id="filips_progress_border">
                 <div id="filips_progress_bar">

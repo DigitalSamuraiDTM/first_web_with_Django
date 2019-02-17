@@ -1,0 +1,16 @@
+{% extends "subs/profile.html" %}
+{% block change %}
+    <section  id="change_data">
+        <h1 style="font-size: 30px">Изменить пароль</h1>
+        <form action="{% url 'rechange' %}" method="post">
+            {% csrf_token %}
+            <input type="password" id="old_password" name="old_password" placeholder=" Старый пароль">
+            <input type="password" id="new_password" name="new_password" placeholder=" Новый пароль">
+            <input type="password" id="repeat_new_password" name="repeat_new_password" placeholder=" Повторите пароль">
+            <input type="submit" value="Подтвердить" id="submit_change_data">
+            <p id="error_password">{{ login_error }}</p>
+
+        </form>
+        <input type="button" id="back_to_profile" value="Назад" onclick=back_to_profile()>
+    </section>
+{% endblock %}

@@ -34,7 +34,8 @@ def start_quest(request):
 
 
 def rezults(request):
-    return render(request, 'subs/test_filips/rezults.html')
+    args={'FEAR':False}
+    return render(request, 'subs/test_filips/rezults.html', args)
 
 
 def FilipsTest(request):
@@ -56,7 +57,9 @@ def signup(request):
     if password == repeat_password:
         registr = User.objects.create_user(email=mail, username=login, password=password, first_name=Fname, last_name=Lname)
         registr.save()
-        registr = Users_data_question(login=login, true_choice=0, bad_choice=0, reiteration_test=0)
+        registr = Users_data_question(login=login, true_choice=0, bad_choice=0, reiteration_test=0, main_choice_quest=0, anxiety_in_school=0,social_fear=0,
+                                      frustration=0, fear_self_expressions=0, fear_situation_to_check=0,fear_not_waiting_social=0,low_resistance_stress=0,
+                                      problems_and_fears_with_teachers=0)
         registr.save()
         return HttpResponseRedirect('/main')
     elif password != repeat_password:
@@ -103,13 +106,34 @@ def work(request):
 
 
 def save_additional_data(request):
+
+    main_choice_quest = request.POST.get('main_choice_quest', False)
+    anxiety_in_school = request.POST.get('anxiety_in_school', False)
+    social_fear = request.POST.get('social_fear', False)
+    frustration = request.POST.get('frustration', False)
+    fear_self_expressions = request.POST.get('fear_self_expressions', False)
+    fear_situation_to_check = request.POST.get('fear_situation_to_check', False)
+    fear_not_waiting_social = request.POST.get('fear_not_waiting_social', False)
+    low_resistance_stress = request.POST.get('low_resistance_stress', False)
+    problems_and_fears_with_teachers = request.POST.get('problems_and_fears_with_teachers', False)
+
     true_choice = int(request.POST.get('true_choice', False))
     bad_choice = int(request.POST.get('bad_choice', False))
     login = request.POST.get('login', False) #пример изменений данных в бд
     additional = Users_data_question.objects.get(login=login)  #выбираем объект с именем login
     additional.bad_choice+= bad_choice #производим изменения с этими полями
     additional.true_choice += true_choice
-    additional.reiteration_test +=1
+
+    additional.main_choice_quest = main_choice_quest
+    additional.anxiety_in_school = anxiety_in_school
+    additional.frustration = frustration
+    additional.fear_self_expressions = fear_self_expressions
+    additional.social_fear = social_fear
+    additional.fear_situation_to_check = fear_situation_to_check
+    additional.fear_not_waiting_social = fear_not_waiting_social
+    additional.low_resistance_stress = low_resistance_stress
+    additional.problems_and_fears_with_teachers = problems_and_fears_with_teachers
+
     additional.save() #сохраняем изменения sql запросом
 
 
@@ -117,4 +141,49 @@ def save_additional_data(request):
 
 
 def profile(request):
-    return render(request, 'subs/profile.html')
+    login = request.user.username
+    additional = Users_data_question.objects.get(login=login)
+    main = User.objects.get(username=login)
+    args = {'main_choice_quest': additional.main_choice_quest,
+            'anxiety_in_school':additional.anxiety_in_school,
+            'frustration':additional.frustration,
+            'fear_self_expressions':additional.fear_self_expressions,
+            'social_fear':additional.social_fear,
+            'fear_situation_to_check':additional.fear_situation_to_check,
+            'fear_not_waiting_social':additional.fear_not_waiting_social,
+            'low_resistance_stress':additional.low_resistance_stress,
+            'problems_and_fears_with_teachers':additional.problems_and_fears_with_teachers,
+            'true_choice': additional.true_choice,
+            'bad_choice': additional.bad_choice,
+            'username': request.user.username,
+            'first_name': main.first_name,
+            'last_name': main.last_name,
+            'reiterations': additional.reiteration_test}
+
+    return render(request, 'subs/profile.html', args)
+
+
+def change_data(request):
+    return render(request, 'subs/change_data.html')
+
+
+def old_results(request):
+
+    additional = Users_data_question.objects.get(login=request.user.username)
+    args = {'main_choice_quest': additional.main_choice_quest,
+            'anxiety_in_school': additional.anxiety_in_school,
+            'frustration': additional.frustration,
+            'fear_self_expressions': additional.fear_self_expressions,
+            'social_fear': additional.social_fear,
+            'fear_situation_to_check': additional.fear_situation_to_check,
+            'fear_not_waiting_social': additional.fear_not_waiting_social,
+            'low_resistance_stress': additional.low_resistance_stress,
+            'problems_and_fears_with_teachers': additional.problems_and_fears_with_teachers,
+            'FEAR':True}
+    return render(request, 'subs/test_filips/rezults.html',args)
+
+def rechange(request):
+    pass
+
+def develop(request):
+    return render(request, 'subs/develop.html')
