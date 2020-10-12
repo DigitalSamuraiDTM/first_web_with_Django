@@ -33,7 +33,7 @@ DEBUG =True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    "6878ce53.ngrok.io",
+    "307aa85d.ngrok.io",
 ]
 
 

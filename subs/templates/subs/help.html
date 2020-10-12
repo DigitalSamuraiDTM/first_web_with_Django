@@ -1,0 +1,46 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link  rel="stylesheet" type="text/css" href="{% static 'subs/other_style.css' %}" /> <!--подключили другой внешний файл css-->
+    <script type = 'text/javascript' src = "{% static 'subs/scripts.js' %}"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static "subs/images/favicon.ico" %}">
+    <title>Помощь</title>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <header id="top_bar">
+        <section>
+        {% if user.is_authenticated  %}
+            <section id="top_bar_user_block">
+                <section style="display: inline-block; position: relative; right: 4%">
+                    <h1 id="FILLIPS">Филлипс</h1>
+                </section>
+                <input type="button" value="Профиль" id="top_bar_account" onclick=go_to_profile()>
+                <input type="button" value="Тестирование" id="top_bar_testing" onclick=to_start_filips()>
+                <input type="button" value="Начало" id="top_bar_help" onclick=back_to_main()>
+                <input type="button" value="О разработке" id="top_bar_develop" onclick=to_develop()>
+                <input type="button" value="Выйти" id="top_bar_logout" onclick=logout_user()>
+                <section id="control_username">
+                    <a id="top_bar_user"> {{ user }} </a>
+                </section>
+            </section>
+                 {% else %}
+            <section id="top_bar_anon_block">
+                    <input type="button" id="top_bar_login" value="Войти" onclick=to_login_page()>
+                    <input type="button" id="top_bar_register" value="Регистрация" onclick=to_register_page() >
+            </section>
+        {% endif %}
+        </section>
+    </header>
+    <article style="font-family: 'Lato', sans-serif;">
+        <section>
+            <h1 style="font-size: 30px; text-align: center">Помощь</h1>
+        </section>
+        <section style="text-align: center; font-size: 20px">
+            <p>Если у вас есть вопросы, то можете обращаться: andrey_nugaev@list.ru</p>
+            <p style="color: red">Весь спам будем автоматически заблокирован</p>
+        </section>
+    </article>
+</body>
+</html>

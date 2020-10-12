@@ -187,3 +187,6 @@ def rechange(request):
 
 def develop(request):
     return render(request, 'subs/develop.html')
+
+def help(request):
+    return render(request, 'subs/help.html')

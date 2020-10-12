@@ -1023,4 +1023,6 @@ function back_to_profile() {
 function to_develop() {
     location.href='/main/develop'
 }
-
+ function to_help(){
+    location.href='/main/help'
+ }

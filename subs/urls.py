@@ -38,6 +38,8 @@ urlpatterns = [
 
     path('rechange',views.rechange, name='rechange'),
 
-    path('develop', views.develop, name='develop')
+    path('develop', views.develop, name='develop'),
+
+    path('help', views.help, name='help')
 
 ]
